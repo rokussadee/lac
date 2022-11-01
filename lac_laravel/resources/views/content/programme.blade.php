@@ -1,53 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>Programme</title>
+@section('content')
 
-    <!-- Fonts -->
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{mix('css/app.css')}}">
-</head>
-<body>
-<nav>
-    <div></div>
-    <div class="navContent">
-        <div>
-            <p>
-                les ateliers claus
-            </p>
-        </div>
-        <div>
-            <div>
-                <div><a href=""><h1>programme</h1></a>
-                </div>
-            </div>
-            <div>
-                <div><a href=""><h1>in residence</h1></a>
-                </div>
-            </div>
-            <div>
-                <div><a href=""><h1>artwork</h1></a>
-                </div>
-            </div>
-            <div>
-                <div><a href=""><h1>archive</h1></a>
-                </div>
-            </div>
-            <div>
-                <div><a href=""><h1>info</h1></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div></div>
-</nav>
-<main>
-    <section>
-        <div class="information card">
+    <section class="cardContainer">
+        <div class="left card">
             <div>
                 <h1>location: roskot</h1>
                 <h1>doors: 19:30</h1>
@@ -56,7 +13,7 @@
                 <h1>tickets</h1>
             </div>
         </div>
-        <div class="information card">
+        <div class="left card additional">
             <div>
                 <h1>collaboration</h1>
                 <h1>not so difficult</h1>
@@ -67,18 +24,24 @@
         </div>
     </section>
     <section>
-        <figure class="carousel">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </figure>
-        <article>
+        <div class="scrollContainer">
+            <figure class="carousel">
+                <img src="{{asset('./assets/senyawa1.png')}}">
+                <img src="{{asset('./assets/senyawa2.png')}}">
+                <img src="{{asset('./assets/orphan.jpeg')}}">
+            </figure>
+            {{--            <button id="scrollButton">--}}
+            {{--                pijltje--}}
+            {{--            </button>--}}
+        </div>
+        <article class="eventContainer">
             senyawa is an experimental band from java, indonesia, consisting of rully shabara and wukir suryadi. the
             band
             was formed in 2010 in yogyakarta.
 
             the band mixes influences from musical and folklore traditions from the indonesian archipelago with
-            experimental music. the band’s neo-tribal sound has been described to mix “punk attitude” with “avant-garde
+            experimental music. the band’s neo-tribal sound has been described to mix “punk attitude” with
+            “avant-garde
             aesthetics”. according to critics, senyawa has “managed to
             embody the aural flavours of javanese music while exploring the framework of experimental
             music practice, pushing the boundaries of both traditions” to create a sound that is “thoroughly
@@ -95,22 +58,26 @@
             enchants all those who encounter it. over the past few years she has integrated the celtic harp
             into her repertoire, crafting new sounds that seamlessly meld into the narrative of her unique
             sonic trajectory.
+
         </article>
     </section>
     <section class="cardContainer">
-        <div class="card">
+        <div class="right card">
             <a href=""><h1>senyawa + orphan fairytale</h1></a>
-            <p>sat 12 oct 2022</p>
+            <h2>sat 12 oct 2022</h2>
         </div>
-        <div class="card">
-            <a href=""><h1>senyawa + orphan fairytale</h1></a>
-            <p>sat 12 oct 2022</p>
+        <div class="right card">
+            <a href=""><h1>pat thomas - seymour wright -
+                    paul abbott - chris corsano</h1></a>
+            <h2>sat 12 oct 2022</h2>
         </div>
-        <div class="card">
-            <a href=""><h1>senyawa + orphan fairytale</h1></a>
-            <p>sat 12 oct 2022</p>
+        <div class="right card">
+            <a href=""><h1>city band - la symétrie des fruits</h1></a>
+            <h2>sat 12 oct 2022</h2>
+        </div>
+        <div class="right card">
+            <a href=""><h1>karim djaoui</h1></a>
+            <h2>sat 12 oct 2022</h2>
         </div>
     </section>
-</main>
-</body>
-</html>
+@endsection

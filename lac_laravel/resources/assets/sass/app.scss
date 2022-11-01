@@ -1,13 +1,27 @@
-* {
+*, :root {
     font-family: Arial, sans-serif;
     font-weight: lighter;
-    font-size: 18px;
+    font-size: 10pt;
     margin: 0;
     padding: 0;
+
+    h1 {
+        font-size: 1.4rem;
+        font-weight: lighter;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
 }
 
 body {
-    margin: 20px;
+    margin: 10px;
     //width: 70%;
 }
 
@@ -16,76 +30,208 @@ a {
     color: black;
 }
 
-h1 {
-    font-size: 25px;
-}
-
 // navigation
 nav {
     display: grid;
-    grid-template-columns: 1fr 850px 1fr;
+    //grid-template-columns: 1fr 850px 1fr;
     margin: auto;
 }
 
 .navContent > div:first-child {
-    p {
+    img {
         position: absolute;
-        bottom: -15px;
-        font-size: 114.5px;
+        bottom: 5px;
+        width: 100%;
     }
 
     position: relative;
-    height: 100px;
+    height: 60px;
 }
 
 .navContent > div:not(:first-child) {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
+    //width: 100%;
     justify-content: space-between;
-    flex: 0 0 20%;
+    //flex: 0 0 20%;
+    border-right: 1px solid black;
 
     > div {
-        flex-basis: 20%;
-        padding: 20px 0;
+        h1 {
+            padding: 0px 5px
+        }
+
+        flex: 30%;
+        flex-grow: 1;
+        padding: 10px 0;
         border: 1px solid black;
+        border-bottom: none;
+        border-right: none;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+}
+
+.activelink {
+    background-color: red;
+
+    h1 {
+        color: white;
     }
 }
 
 // main content
 
-main {
-    display: grid;
-    grid-template-columns: 1fr 850px 1fr;
+//main {
+//    display: grid;
+//    grid-template-columns: 1fr 52vw 1fr;
+//}
+
+.scrollContainer {
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+
 }
 
 .carousel {
     display: flex;
     flex-direction: row;
-    height: 300px;
-    overflow: scroll;
+    //height: 300px;
+    overflow-x: scroll;
     border: 1px solid black;
+    border-bottom: none;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-base-color: transparent;
+    scrollbar-3dlight-color: transparent;
+    /* clip away the scrollbar */
+    block-size: calc(100% + 25px);
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
     img {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
         height: 100%;
+        block-size: calc(100% - 25px);
+
     }
 }
 
-.information {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#scrollButton {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
+.eventContainer {
+    border: 1px solid black;
+    padding: 10px;
+    height: 100%;
+    text-align: justify;
+}
+
+
 .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 130px);
     border-collapse: collapse;
+    grid-gap: 0;
+
+    > div:last-child {
+        border-bottom: 1px solid black;
+    }
 }
 
 .card {
     padding: 15px;
     box-sizing: content-box;
     border: 1px solid black;
+
+    h1 {
+        padding-bottom: 10px;
+    }
+}
+
+.left {
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right {
+    border-left: none;
+    border-bottom: none;
+
+}
+
+.additional {
+    grid-row-start: 4;
+}
+
+@media only screen and (min-width: 850px) {
+    *, :root {
+        font-size: 12pt;
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: lighter;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+        }
+    }
+
+
+    body {
+        margin: 20px;
+        //width: 70%;
+    }
+
+    nav {
+        grid-template-columns: 1fr 850px 1fr;
+    }
+
+    .navContent > div:first-child {
+        height: 100px;
+
+    }
+    .navContent > div:not(:first-child) {
+        flex-wrap: nowrap;
+
+        > div {
+            flex: 30%;
+            padding: 20px 0;
+
+        }
+    }
+
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 850px 1fr;
+    }
+
+    .carousel {
+        img {
+            scroll-snap-align: start;
+        }
+    }
+
+    .eventContainer {
+        padding: 20px;
+    }
 }
