@@ -116,6 +116,8 @@
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/riverskies/laravel-mobile-detect" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/mobiledetect/mobiledetectlib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

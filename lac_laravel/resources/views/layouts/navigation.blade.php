@@ -8,9 +8,6 @@
             <x-nav-link :href="route('programme')" :active="request()->routeIs('programme')">
                 {{__('programme')}}
             </x-nav-link>
-            {{--            <x-nav-link :href="route('residence')" :active="request()->routeIs('residence')">--}}
-            {{--                {{__('in residence')}}--}}
-            {{--            </x-nav-link>--}}
             <div>
                 <div><a href=""><h1>in&nbsp;residence</h1></a>
                 </div>

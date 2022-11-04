@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('date');
+            $table->date('date_to')->nullable();
             $table->text('description');
             $table->string('images')->nullable();
             $table->string('location');

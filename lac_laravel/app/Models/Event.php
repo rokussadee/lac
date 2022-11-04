@@ -12,6 +12,7 @@ class Event extends Model
     protected $fillable = [
         'title',
         'date',
+        'date_to',
         'description',
         'images',
         'location',
@@ -22,7 +23,10 @@ class Event extends Model
     ];
 
     protected $casts = [
-        'images' => 'array'
+        'images' => 'array',
+        'date' => 'datetime:Y-m-d',
+        'date_to' => 'datetime:Y-m-d',
+
     ];
 
 }

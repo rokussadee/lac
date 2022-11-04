@@ -10,6 +10,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+
+    <script src="{{mix('js/app.js')}}" defer></script>
 </head>
 <body>
 
