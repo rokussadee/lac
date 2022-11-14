@@ -2,7 +2,7 @@
 
 @section('content')
     <div x-data="{activeTab: 0}"
-         class="grid">
+         class="grid border-top">
         @foreach($events as $event)
             <div @click="activeTab = {{$loop->index}}"
                  :class="{'activelink' : activeTab === {{$loop->index}}}"
@@ -12,10 +12,11 @@
                 @include('partials.card', ['title' => $event->title, 'date' => $event->date])
             </div>
             <section x-show="activeTab === {{$loop->index}}"
+                     x-data="showbuttons"
                      class="section section{{$loop->index}} sectioncontent"
                      style="display: {{$loop->index === 0 ? 'block' : 'none'}}">
                 @include('partials.carousel', ['images' => $event->images])
-                @include('partials.section', ['description' => $event->description])
+                @include('partials.section', ['title' => $event->title,'description' => $event->description])
             </section>
             <div x-show="activeTab === {{$loop->index}}"
                  class="left card section{{$loop->index}} sectioncontent"

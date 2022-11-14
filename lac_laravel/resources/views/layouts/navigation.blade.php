@@ -20,10 +20,9 @@
                 <div><a href=""><h1>archive</h1></a>
                 </div>
             </div>
-            <div>
-                <div><a href=""><h1>info</h1></a>
-                </div>
-            </div>
+            <x-nav-link :href="route('about us')" :active="request()->routeIs('about us')">
+                {{__('about us')}}
+            </x-nav-link>
         </div>
     </div>
     <div></div>

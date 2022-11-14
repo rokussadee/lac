@@ -18,7 +18,7 @@ class EventSeeder extends Seeder
         $events = [
             $event1 = Event::create([
                 'title' => 'senyawa + orphan fairytale',
-                'date' => new Carbon('2022-11-10'),
+                'date' => new Carbon('2022-11-24'),
                 'description' => '<p>senyawa is an experimental band from java, indonesia, consisting of rully shabara and wukir suryadi. the band was formed in 2010 in yogyakarta.</p></br><p>the band mixes influences from musical and folklore traditions from the indonesian archipelago with experimental music. the band’s neo-tribal sound has been described to mix “punk attitude” with “avant-garde aesthetics”. according to critics, senyawa has “managed to embody the aural flavours of javanese music while exploring the framework of experimental music practice, pushing the boundaries of both traditions” to create a sound that is “thoroughly out of this world.”</p></br><p>shabara provides his extended vocal techniques to senyawa. the band’s lyrics are in various languages of indonesia, including sulawesian, javanese, and indonesian. senyawa’s music is provided by suryadi’s self-built musical instruments made from bamboo and traditional agricultural tools from rural indonesia.</p></br><p>eva van deuren has been wayfaring as orphan fairytale for the past 15 years and counting. with her electronic psychedelia that deftly teeters between the bubbly and the eerie, van deuren is a prolific presence in our spheres and her music is a constant which irrefutably touches and enchants all those who encounter it. over the past few years she has integrated the celtic harp into her repertoire, crafting new sounds that seamlessly meld into the narrative of her unique sonic trajectory.</p>',
                 'images' => json_encode(['senyawa1.png', 'senyawa2.png', 'orphan.jpeg']),
                 'location' => 'roskot',
@@ -27,7 +27,7 @@ class EventSeeder extends Seeder
 
             $event2 = Event::create([
                 'title' => 'pat thomas - seymour wright - paul abbott - chris corsano',
-                'date' => new Carbon('2022-11-09'),
+                'date' => new Carbon('2022-11-20'),
                 'description' => '<p>pat thomas studied classical piano from aged 8 and started playing jazz from the age of 16. he has since
 gone on to develop an utterly unique style - embracing improvisation, jazz and new music. he has played with
 derek bailey in company week (1990/91) and in the trio and (with noble) – with tony oxley’s quartet and
@@ -58,17 +58,13 @@ amplitude and infinite resources. his collaborations stretch from free jazz grea
             $event4 = Event::create([
                 'title' => 'cornelis',
                 'date' => new Carbon('2022-08-20'),
-                'date_to' => new Carbon('2022-12-01'),
+                'date_to' => new Carbon('2022-11-01'),
                 'description' => '<p>De gekste beats.</p>',
                 'images' => json_encode(['verschmutzt2_5.png']),
                 'location' => 'les ateliers claus',
                 'doors' => ''
             ])
         ];
-//
-//        foreach ($events as $event) {
-//
-//        }
 
     }
 }

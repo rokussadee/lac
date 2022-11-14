@@ -8,6 +8,6 @@
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
     <div>
-        <a href=""><h1>{{$slot}}</h1></a>
+        <a {{ $attributes->merge(['class' => $classes]) }}><h1>{{$slot}}</h1></a>
     </div>
 </div>
