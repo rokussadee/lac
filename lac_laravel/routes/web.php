@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\StaticController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('programme');
-});
+Route::get('/', [EventController::class, 'getIndex'])->name('programme');
+Route::get('aboutus', [StaticController::class, 'getAbout'])->name('about us');

@@ -110,6 +110,8 @@
       <path value="$PROJECT_DIR$/lac_laravel/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/lac_laravel/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/lac_laravel/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/riverskies/laravel-mobile-detect" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/mobiledetect/mobiledetectlib" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
