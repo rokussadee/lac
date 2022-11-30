@@ -5525,17 +5525,22 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var _carousel_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./carousel.js */ "./resources/js/carousel.js");
-/* harmony import */ var _alpinejs_intersect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @alpinejs/intersect */ "./node_modules/@alpinejs/intersect/dist/module.esm.js");
-/* harmony import */ var _showbuttons_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./showbuttons.js */ "./resources/js/showbuttons.js");
+/* harmony import */ var _wiggle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./wiggle.js */ "./resources/js/wiggle.js");
+/* harmony import */ var _wiggle_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wiggle_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _carousel_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel.js */ "./resources/js/carousel.js");
+/* harmony import */ var _alpinejs_intersect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @alpinejs/intersect */ "./node_modules/@alpinejs/intersect/dist/module.esm.js");
+/* harmony import */ var _showbuttons_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./showbuttons.js */ "./resources/js/showbuttons.js");
 
 
 
 
 
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('showbuttons', _showbuttons_js__WEBPACK_IMPORTED_MODULE_4__["default"]);
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('carousel', _carousel_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].plugin(_alpinejs_intersect__WEBPACK_IMPORTED_MODULE_3__["default"]);
+
+// import './arrow.js'
+
+alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('showbuttons', _showbuttons_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
+alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('carousel', _carousel_js__WEBPACK_IMPORTED_MODULE_3__["default"]);
+alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].plugin(_alpinejs_intersect__WEBPACK_IMPORTED_MODULE_4__["default"]);
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 
@@ -5617,9 +5622,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     to: function to(strategy) {
       var slider = this.$refs.slider;
-      console.log(slider.scrollWidth, slider.offsetWidth);
       var current = slider.scrollLeft;
-      var offset = 450;
+      var offset = this.$refs.carousel.clientWidth;
       slider.scrollTo({
         left: strategy(current, offset),
         behavior: "smooth"
@@ -5668,6 +5672,31 @@ __webpack_require__.r(__webpack_exports__);
     }
   };
 });
+
+/***/ }),
+
+/***/ "./resources/js/wiggle.js":
+/*!********************************!*\
+  !*** ./resources/js/wiggle.js ***!
+  \********************************/
+/***/ (() => {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function wiggleWitIt() {
+  wiggles = document.getElementsByClassName("wiggle");
+  _toConsumableArray(wiggles).forEach(function (wiggle) {
+    wiggle.innerHTML = wiggle.innerText.split("").map(function (_char, index) {
+      return "<span style='--animation-order: ".concat(index + 1, ";'><h1>").concat(_char, "</h1></span>");
+    }).join("");
+  });
+}
+;
+document.addEventListener("DOMContentLoaded", wiggleWitIt());
 
 /***/ }),
 

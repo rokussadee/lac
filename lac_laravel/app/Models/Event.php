@@ -17,7 +17,8 @@ class Event extends Model
         'images',
         'location',
         'doors',
-        'additional_category',
+        'tickets',
+        'additional_category' => 'concert',
         'additional_description',
         'additional_link'
     ];
@@ -26,7 +27,6 @@ class Event extends Model
         'images' => 'array',
         'date' => 'datetime:Y-m-d',
         'date_to' => 'datetime:Y-m-d',
-
     ];
 
 }

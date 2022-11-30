@@ -1,5 +1,6 @@
 <div class="scrollContainer"
      x-data="carousel"
+     x-ref="carousel"
 
 >
     <button
@@ -10,7 +11,7 @@
         x-ref="prevButton"
         x-transition.duration.200ms
     >
-      <span class="material-symbols-outlined" style="rotate: 180deg">
+      <span class="material-symbols-outlined" style="transform: rotate(180deg)">
 arrow_forward_ios
 </span>
     </button>

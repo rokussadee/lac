@@ -17,53 +17,67 @@ class EventSeeder extends Seeder
     {
         $events = [
             $event1 = Event::create([
-                'title' => 'senyawa + orphan fairytale',
-                'date' => new Carbon('2022-11-24'),
-                'description' => '<p>senyawa is an experimental band from java, indonesia, consisting of rully shabara and wukir suryadi. the band was formed in 2010 in yogyakarta.</p></br><p>the band mixes influences from musical and folklore traditions from the indonesian archipelago with experimental music. the band’s neo-tribal sound has been described to mix “punk attitude” with “avant-garde aesthetics”. according to critics, senyawa has “managed to embody the aural flavours of javanese music while exploring the framework of experimental music practice, pushing the boundaries of both traditions” to create a sound that is “thoroughly out of this world.”</p></br><p>shabara provides his extended vocal techniques to senyawa. the band’s lyrics are in various languages of indonesia, including sulawesian, javanese, and indonesian. senyawa’s music is provided by suryadi’s self-built musical instruments made from bamboo and traditional agricultural tools from rural indonesia.</p></br><p>eva van deuren has been wayfaring as orphan fairytale for the past 15 years and counting. with her electronic psychedelia that deftly teeters between the bubbly and the eerie, van deuren is a prolific presence in our spheres and her music is a constant which irrefutably touches and enchants all those who encounter it. over the past few years she has integrated the celtic harp into her repertoire, crafting new sounds that seamlessly meld into the narrative of her unique sonic trajectory.</p>',
-                'images' => json_encode(['senyawa1.png', 'senyawa2.png', 'orphan.jpeg']),
-                'location' => 'roskot',
-                'doors' => '19h30'
+                'title' => 'EC Band',
+                'date' => new Carbon('2022-12-17'),
+                'description' => '<p>A collaboration between New Yorker Luke Calzonetti (Run Dust, Sugarstick & Xerox, Childabuse) and Limburgian Stijn Wybouw (KRAMP, Kraak records) of transcendental improv overtones. Undulating layers of synth lashings, cymbal echoes, and some laid-back guitar action mesh in a spaced out trip in the physical and astral plane.</p><br><p>
+A filmic hitchhike to nowhere. Their first LP just came out your way via the great Meakusma avenue.</p><br><a href="https://meakusma.bandcamp.com/album/the-ec-band"><p>https://meakusma.bandcamp.com/album/the-ec-band</p></a>',
+                'images' => json_encode(['EC band Bos 2.jpg', 'Image 20-11-2022 at 23.31.jpeg']),
+                'location' => '28 ninovesteenweg, alost',
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/going-ec-band-tickets-469871547447'
             ]),
 
             $event2 = Event::create([
-                'title' => 'pat thomas - seymour wright - paul abbott - chris corsano',
-                'date' => new Carbon('2022-11-20'),
-                'description' => '<p>pat thomas studied classical piano from aged 8 and started playing jazz from the age of 16. he has since
-gone on to develop an utterly unique style - embracing improvisation, jazz and new music. he has played with
-derek bailey in company week (1990/91) and in the trio and (with noble) – with tony oxley’s quartet and
-celebration orchestra and in duo with lol coxhill.</p></br><p>seymour wright’s work is about the creative, situated friction of learning, ideas, people and the saxophone –
-music, history, and technique ­– actual and potential.
-his solo work is documented on three widely-acclaimed collections - seymour wright of derby (2008),
-seymour writes back (2015) and is this right? (2017).</p></br><p>one of the greatest drummers working today, corsano has developed a percussive language of extraordinary
-amplitude and infinite resources. his collaborations stretch from free jazz greats (joe mcphee, paul flaherty
-& more) to noise mavens (bill nace, c spencer yeh etc) and pop superstars (björk).</p>',
-                'images' => json_encode(['patthomas.png', 'corsano.png']),
-                'location' => 'les ateliers claus',
-                'doors' => '21h00',
-                'additional_category' => 'collaboration',
-                'additional_description' => 'this event was organized in collaboration with bozar',
-                'additional_link' => 'https://www.bozar.be/en'
+                'title' => 'GOING',
+                'date' => new Carbon('2022-12-17'),
+                'description' => '<p>Is a Belgian based group, had a skeletal line up of 2 drummers, (João Lobo and Mathieu Calleja), and 2 keyboards/synths/ fender rhodes + plenty of electronics (Giovanni Di Domenico and Pak Yan Lau).
+The sound that they come up with could be loosely post-rock, but also closely allied to improvised, experimental and minimal music.
+</p></br><p>
+Their universe is all about trance, where time is being stretched and transformed in different ways. Electronic sounds weaves textures, while polyrhythmic cells are being laid down, sometimes hard to distinguish who is doing what.
+Their music can be described as one big trip, a voyage into today’s urban stellar system.
+</p></br><p>
+Due to the leave of one of the members (Mathieu Calleja), Going is researching in this residency for possible new musical directions and guests or/and members. Going invites Manuel Mota, Gaspard Sicx and Giotis Damianidis for some experimentations during this week.</p><br><a href="https://goingmusic.bandcamp.com/"><p>https://goingmusic.bandcamp.com</p></a>',
+                'images' => json_encode(['Going.jpeg', 'Image 20-11-2022 at 23.20.jpeg']),
+                'location' => '15 rue crickx, brussels',
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/going-ec-band-tickets-469871547447',
+                'additional_category' => 'test',
+                'additional_description' => '<p>this event is a collaboration with belgian record label <a href = "https://www.instagram.com/v23be/">v23</a></p>',
             ]),
-
             $event3 = Event::create([
                 'title' => 'karim djaoui',
-                'date' => new Carbon('2022-11-20'),
-                'date_to' => new Carbon('2022-11-30'),
-                'description' => '<p>Artiste autodidacte et pluridisciplinaire, Karim Djaoui travaille depuis plusieurs années le fil sur des supports variés allant de tissus aux photographies anciennes en passant par des cartes géographiques et des papiers recyclés, dans des formats de toutes tailles. Ses œuvres ont notamment été exposées dans l’Espace Vanderborght, au Pianocktail, dans la Librairie Poëtini, chez Pierre Papier Ciseaux, à la Maison Commune suite à une résidence…</p></br><p>Karim Djaoui compte parmi les coups de cœur du Parcours d’artistes de Saint-Gilles 2022 pour sa série de portraits brodés.</p></br><p>Djaoui.karim@gmx.fr</br>0497 87 02 05</br>Insta: @djaouik</br>Facebook : 2kaval</p>',
-                'images' => json_encode(['20221103_092411.jpg', '20221103_092708.jpg', '20221103_093020.jpg']),
-                'location' => 'les ateliers claus',
-                'doors' => ''
+                'date' => new Carbon('2022-12-17'),
+                'date_to' => new Carbon('2023-12-31'),
+                'description' => '<p>Artiste autodidacte et pluridisciplinaire, Karim Djaoui travaille depuis plusieurs années le fil sur des supports variés allant de tissus aux photographies anciennes en passant par des cartes géographiques et des papiers recyclés, dans des formats de toutes tailles. Ses œuvres ont notamment été exposées dans l’Espace Vanderborght, au Pianocktail, dans la Librairie Poëtini, chez Pierre Papier Ciseaux, à la Maison Commune suite à une résidence…
+</p></br><p>
+Karim Djaoui compte parmi les coups de cœur du Parcours d’artistes de Saint-Gilles 2022 pour sa série de portraits brodés.
+</p></br><a href="mailto:Djaoui.karim@gmx.fr"><p>
+Djaoui.karim@gmx.fr</p></a><br>
+<p>
+0497 87 02 05
+</p>
+<p>
+Insta : @djaouik
+</p><p>
+Facebook : 2kaval
+</p>
+',
+                'images' => json_encode(['20221103_092411.jpg ', '20221103_092708.jpg', '20221103_093020.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'additional_category' => 'exposition',
+                'additional_description' => '<p>karim djaoui&apos;s works are on display in the les ateliers claus headquarters</p>',
             ]),
-
-            $event4 = Event::create([
-                'title' => 'cornelis',
-                'date' => new Carbon('2022-08-20'),
-                'date_to' => new Carbon('2022-11-01'),
-                'description' => '<p>De gekste beats.</p>',
-                'images' => json_encode(['verschmutzt2_5.png']),
-                'location' => 'les ateliers claus',
-                'doors' => ''
-            ])
+//            $event3 = Event::create([
+//                'title' => 'Hogepriester "Cornelis Maria Theresia',
+//                'date' => new Carbon('2022-12-17'),
+//                'date_to' => new Carbon('2023-12-31'),
+//                'description' => '<p>ballekes meeee tmatteSaus
+//</p>
+//<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1375060375%3Fsecret_token%3Ds-PbtBQzxLe0G&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Arial,sans-serif;"> </div>
+//',
+//                'images' => json_encode(['309205617_5604054183021522_8107877733715353418_n.jpg', '310437765_1199459244119328_6809483521739371860_n.jpg', 'verschmutzt2_5.png']),
+//                'location' => '15 rue crickx, brussels',
+//            ]),
         ];
 
     }

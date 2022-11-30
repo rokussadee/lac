@@ -2,12 +2,13 @@
 
 @php
     $classes = ($active ?? false)
-                ? 'activelink'
+                ? 'activelink nowiggle'
                 : '';
 @endphp
 
-<div {{ $attributes->merge(['class' => $classes]) }}>
+<a
+    {{ $attributes->merge(['class' => $classes]) }}>
     <div>
-        <a {{ $attributes->merge(['class' => $classes]) }}><h1>{{$slot}}</h1></a>
+        <h1>{{$slot}}</h1>
     </div>
-</div>
+</a>

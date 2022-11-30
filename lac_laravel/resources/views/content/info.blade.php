@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="grid">
         <div class="section">
-            <div class="titleBar" style="color: red; border-color: red"><h1>code of
-                    conduct</h1></div>
+            <div class="titleBar" style="color: red; border-color: red"><h1>public statement</h1></div>
             <div class="gedragscode">
                 <h2 style="display: inline-block; padding-right: 5px; padding-left: 5px; margin-bottom: 10px; border: 1px solid red;">
-                    nl</h2>
+                    en</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in.
@@ -18,10 +18,8 @@
                     natoque penatibus et magnis.
                 </p>
                 <br>
-                <hr>
-                <br>
                 <h2 style="display: inline-block; padding-right: 5px; padding-left: 5px; margin-bottom: 10px; border: 1px solid red;">
-                    en</h2>
+                    fr</h2>
                 <p>
                     Enim sed faucibus turpis in eu. Sed velit dignissim sodales ut. Arcu odio ut sem nulla pharetra.
                     Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Adipiscing enim eu turpis
@@ -34,10 +32,8 @@
                     commodo viverra maecenas accumsan. Id aliquet lectus proin nibh nisl.
                 </p>
                 <br>
-                <hr>
-                <br>
                 <h2 style="display: inline-block; padding-right: 5px; padding-left: 5px; margin-bottom: 10px; border: 1px solid red;">
-                    fr</h2>
+                    nl</h2>
                 <p>Ac ut consequat semper viverra. Morbi tristique senectus et netus. Dignissim cras tincidunt lobortis
                     feugiat. Amet est placerat in egestas erat imperdiet sed euismod nisi. Maecenas ultricies mi eget
                     mauris pharetra et ultrices. Tempor commodo ullamcorper a lacus vestibulum. In metus vulputate eu
@@ -48,6 +44,21 @@
             <div class="titleBar">
                 <h1>les ateliers claus</h1>
             </div>
+            <div style="border-bottom: 1px solid black" x-data="showbuttons">
+                @include('partials.carousel', ['images'=>$lacimages])
+            </div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe id="gmap_canvas"
+                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=crickxstraat%2015+(roskot)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                            title="Streets" style="border:none;"></iframe>
+                    {{--                    <div class="iframe-info">--}}
+                    {{--                        <p>les&nbsp;ateliers&nbsp;claus</p>--}}
+                    {{--                        <p>crickxstraat&nbsp;15&nbsp;rue&nbsp;crickx</p>--}}
+                    {{--                        <p>1060 saint-gilles, brussels</p>--}}
+                    {{--                    </div>--}}
+                </div>
+            </div>
             <article class="about-us">
                 <p>
                     les ateliers claus is an intimate concert venue in brussels focused on alternative music. we aim
@@ -56,24 +67,25 @@
                     space open for experiments.<br><br>les ateliers claus is a project founded by frans claus.
                 </p>
             </article>
-            <div style="border-top: 1px solid black" x-data="showbuttons">
-                @include('partials.carousel', ['images'=>$lacimages])
-            </div>
 
-            {{--            <div class="mapouter">--}}
-            {{--                <div class="gmap_canvas">--}}
-            {{--                    <iframe id="gmap_canvas"--}}
-            {{--                            src="https://api.mapbox.com/styles/v1/cornelisdev/clacjjd5m000m16mvrhzn6v3a.html?title=false&access_token=pk.eyJ1IjoiY29ybmVsaXNkZXYiLCJhIjoiY2xhY2lzdHBzMDRnNzN3bnZqMXk5MXh6MSJ9.v5EdmgytF-WvH9EspPePQw&zoomwheel=false#15.01/50.82918/4.33781/0/60"--}}
-            {{--                            title="Streets" style="border:none;"></iframe>--}}
-            {{--                    <div class="iframe-info">--}}
-            {{--                        <p>les&nbsp;ateliers&nbsp;claus</p>--}}
-            {{--                        <p>crickxstraat&nbsp;15&nbsp;rue&nbsp;crickx</p>--}}
-            {{--                        <p>1060 saint-gilles, brussels</p>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
             <div class="titleBar">
                 <h1>roskot</h1>
+            </div>
+            <div style="border-bottom: 1px solid black"
+                 x-data="showbuttons">
+                @include('partials.carousel', ['images'=>$roskotimages])
+            </div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=ninovesteenweg%2028+(roskot)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        title="Streets-copy-copy" style="border:none;"></iframe>
+                    {{--                    <div class="iframe-info">--}}
+                    {{--                        <p>les&nbsp;ateliers&nbsp;claus</p>--}}
+                    {{--                        <p>crickxstraat&nbsp;15&nbsp;rue&nbsp;crickx</p>--}}
+                    {{--                        <p>1060 saint-gilles, brussels</p>--}}
+                    {{--                    </div>--}}
+                </div>
             </div>
             <article class="about-us">
                 <p>
@@ -83,49 +95,67 @@
                     also
                     often the stage for concerts and festivals.
                 </p>
+                <br>
+                <a href="https://www.roskot.be"><p> => check out roskot.be</p></a>
             </article>
-            <div style="border-top: 1px solid black"
-                 x-data="showbuttons">
-                @include('partials.carousel', ['images'=>$roskotimages])
-            </div>
-            {{--            <div class="mapouter">--}}
-            {{--                <div class="gmap_canvas">--}}
-            {{--                    <iframe--}}
-            {{--                        src="https://api.mapbox.com/styles/v1/cornelisdev/clah06igp000o14mowblkfg1k.html?title=false&access_token=pk.eyJ1IjoiY29ybmVsaXNkZXYiLCJhIjoiY2xhY2lzdHBzMDRnNzN3bnZqMXk5MXh6MSJ9.v5EdmgytF-WvH9EspPePQw&zoomwheel=false#14.76/50.92479/4.03329/0/66"--}}
-            {{--                        title="Streets-copy-copy" style="border:none;"></iframe>--}}
-            {{--                    <div class="iframe-info">--}}
-            {{--                        <p>les&nbsp;ateliers&nbsp;claus</p>--}}
-            {{--                        <p>crickxstraat&nbsp;15&nbsp;rue&nbsp;crickx</p>--}}
-            {{--                        <p>1060 saint-gilles, brussels</p>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
+
             <div class="titleBar">
                 <h1>contact information</h1>
             </div>
             <article id="roskotcontact" class="about-us" style="border-bottom: 1px solid black;">
-                <div><h2>for general questions, contact us via mail or phone:</h2>
-                    <p>
-                    <p><a href="mailto:info@lesateliersclaus.com">info@lesateliersclaus.com</a></p>
-                    <p>02 534 51 03</p>
-                    <p>office / mail: les ateliers claus vzw,<br>crickxstraat 15, b-1060 brussels</p>
-                </div>
-                <div><h2>bank:</h2>
-                    <p> BE 0889.040.929</p>
+                <div>
+                    <p>mail: <a href="mailto:info@lesateliersclaus.com">info@lesateliersclaus.com</a></p>
+                    <p>bank: BE 0889.040.929</p>
                     <p>IBAN: BE89 7310 0585 0485</p>
                     <p>BIC: KREDBEBB</p></div>
             </article>
             <div style="height: .1px">
             </div>
         </div>
-        <div class="left card border-top">
+        <div class="left card desktopBorder mobileBottom">
             <div class="newsletterInput">
-                <div style="padding-right: 20px">
+                <div>
                     <h1>subscribe to our newsletter:</h1>
                 </div>
                 <div class="inputContainer">
-                    <label><span class="content-email">e-mail</span></label>
-                    <input type="text">
+                    <input id="email-input" type="text" name="text" autocomplete="off" required/>
+                    <label class="label-name"><span class="content-email">e-mail</span>
+                        <div id="arrow" x-data>
+                            <button @click="console.log('click')">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </button>
+                        </div>
+                    </label>
+                    <script>
+                        const arrow = document.getElementById('arrow')
+                        const input = document.getElementById('email-input')
+
+                        input.addEventListener('input', () => {
+                            if (input.value === '') {
+                                hideArrow()
+                            } else {
+                                arrow.setAttribute('data-open', '')
+                            }
+                        })
+
+                        input.addEventListener('focusout', () => {
+                            if (input.value === '' && input.hasAttribute('data-open')) {
+                                hideArrow()
+                            }
+                        })
+
+                        function hideArrow() {
+                            arrow.removeAttribute('data-open')
+                            arrow.setAttribute('data-closing', '')
+
+                            arrow.addEventListener('animationend', () => {
+                                arrow.removeAttribute('data-closing')
+                            }, {once: true})
+                        }
+
+                    </script>
                 </div>
             </div>
         </div>

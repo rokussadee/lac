@@ -4,7 +4,7 @@ html {
 
 *, :root {
   font-family: Arial, sans-serif;
-  font-weight: lighter;
+  font-weight: 400;
   font-size: 10pt;
   text-transform: lowercase;
   margin: 0;
@@ -12,14 +12,16 @@ html {
 }
 * h1, * input, :root h1, :root input {
   font-size: 1.4rem;
-  font-weight: lighter;
+  font-weight: 400;
 }
 * p, :root p {
   font-size: 1rem;
   text-align: justify;
+  font-weight: 400;
 }
 * h2, :root h2 {
   font-size: 1.2rem;
+  font-weight: 400;
 }
 * hr, :root hr {
   border-top: 1px dashed red;
@@ -40,11 +42,17 @@ html {
   background: transparent;
 }
 
+img {
+  filter: saturate(120%) contrast(110%) brightness(110%);
+  -webkit-filter: saturate(120%) contrast(110%) brightness(110%);
+}
+
 body {
   margin: 10px;
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -52,6 +60,7 @@ a {
 }
 a ::before {
   content: "";
+  width: 100%;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -67,14 +76,14 @@ a :hover::before {
 }
 a :hover {
   text-decoration: none !important;
-  text-decoration-color: red;
   color: white;
-  box-shadow: 0 0 0 10px rgba(250, 250, 250, 0.1);
   transition: 0.1s;
 }
 
 .titleBar {
   border: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 10px;
 }
 .titleBar h1 {
@@ -103,25 +112,132 @@ nav {
   justify-content: space-between;
   border-right: 1px solid black;
 }
-.navContent > div:not(:first-child) > div {
+.navContent > div:not(:first-child) > div, .navContent > div:not(:first-child) > a {
   flex: 30%;
   padding: 10px 0;
   border: 1px solid black;
   border-bottom: none;
   border-right: none;
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
 }
-.navContent > div:not(:first-child) > div h1 {
+.navContent > div:not(:first-child) > div h1, .navContent > div:not(:first-child) > a h1 {
   padding: 0 5px;
+}
+
+.linkContainer > a {
+  transition: ease-in-out 0.1s;
+}
+
+.linkContainer > a:hover {
+  background: red;
+  color: white;
+}
+.linkContainer > a:hover * {
+  color: white !important;
+}
+
+.linkContainer > a:hover span::before, .linkContainer > a:hover span::after {
+  color: white;
+}
+.linkContainer > a:hover span::before *, .linkContainer > a:hover span::after * {
+  color: white !important;
 }
 
 .activelink {
   background-color: red;
 }
-.activelink h1, .activelink h2 {
+.activelink * {
+  color: white !important;
+}
+
+.wiggle span {
+  display: inline-block;
+  animation: wiggle 1s infinite;
+  animation-delay: calc(var(--animation-order) * 307ms);
+  transform-origin: center;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: scale(1) translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: scale(1) translateY(-2px) rotate(-3deg);
+  }
+  40% {
+    transform: scale(1.1) translateY(-2px) rotate(3deg);
+  }
+  60% {
+    transform: scale(1) translateY(2px) rotate(-3deg);
+  }
+  80% {
+    transform: scale(0.95) translateY(-2px) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) translateY(0px) rotate(0deg);
+  }
+}
+@keyframes flickerAnimation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+@keyframes flickerAnimation2 {
+  0% {
+    color: white;
+    background: red;
+  }
+  50% {
+    color: red;
+    background: hsla(9deg, 100%, 50%, 0.18);
+  }
+  100% {
+    color: white;
+    background: red;
+  }
+}
+.animate-flicker h1 {
+  color: red;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative;
+}
+.animate-flicker span:first-of-type::before, .animate-flicker span:last-of-type::after {
+  padding: 0;
+  margin: 0;
+  content: "!";
+  background: transparent;
+  color: red;
+  opacity: 1;
+  position: absolute;
+}
+.animate-flicker span:first-of-type::before {
+  left: -5px;
+  width: 5.183px;
+}
+.animate-flicker span:last-of-type::after {
+  right: -5px;
+  top: 0;
+}
+.animate-flicker .animate-flicker:hover span:first-of-type::before, .animate-flicker .animate-flicker:hover span:last-of-type::after {
   color: white;
+}
+
+.nowiggle span {
+  animation: none !important;
+}
+
+.nowiggle span::before, .nowiggle span::after {
+  display: none;
 }
 
 .scrollContainer {
@@ -130,7 +246,19 @@ nav {
   position: relative;
 }
 
-.carousel {
+.scrollContainer:hover {
+  filter: blur(0px);
+  background: transparent;
+  mix-blend-mode: revert;
+}
+.scrollContainer:hover .overlay, .scrollContainer:hover .two {
+  opacity: 0;
+  background-color: unset;
+  mix-blend-mode: normal;
+}
+
+.carousel, .sidecarousel {
+  position: relative;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -143,10 +271,10 @@ nav {
   scrollbar-3dlight-color: transparent;
   block-size: calc(100% + 25px);
 }
-.carousel ::-webkit-scrollbar {
+.carousel ::-webkit-scrollbar, .sidecarousel ::-webkit-scrollbar {
   display: none;
 }
-.carousel img {
+.carousel img, .sidecarousel img {
   flex-grow: 1;
   scroll-snap-align: center;
   scroll-snap-stop: always;
@@ -157,17 +285,8 @@ nav {
   block-size: calc(100% - 25px);
 }
 
-.blur {
-  filter: blur(20px);
-  z-index: -1;
-  transition: 0.5s ease-in-out;
-}
-
-.clear {
-  filter: none;
-  opacity: 1;
-  z-index: -1;
-  transition: 0.5s ease-in-out;
+.sidecarousel {
+  border-top: 1px solid black;
 }
 
 .nextButton, .prevButton {
@@ -210,6 +329,30 @@ nav {
   text-align: justify;
 }
 
+.residenceContent {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+
+.residenceContainer {
+  padding: 10px;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.residenceContainer h2 {
+  margin-bottom: 10px;
+}
+
+.residenceTitle {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.requestResidencyContainer {
+  border-bottom: 1px solid black;
+}
+
 .about-us {
   border: 1px solid black;
   border-bottom: none;
@@ -218,11 +361,10 @@ nav {
 }
 
 .card {
-  padding: 15px;
+  overflow: hidden;
   box-sizing: content-box;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  border-bottom: 1px solid black;
 }
 .card h1 {
   margin-bottom: 10px;
@@ -233,8 +375,24 @@ nav {
   -webkit-box-orient: vertical;
 }
 
-.right:first-of-type {
+.right {
+  padding: 10px;
+}
+
+.section.desktopBorder {
   border-top: 1px solid black;
+}
+
+.right:not(:first-of-type) {
+  border-top: 1px solid black;
+}
+
+.right:hover {
+  background: red;
+  transition: 0.1s;
+}
+.right:hover * {
+  color: white;
 }
 
 .flex {
@@ -249,17 +407,10 @@ nav {
   border-bottom: none;
 }
 
-.left:has(+ .right) {
-  border-bottom: 1px solid black;
-}
-
-.left:not(:has(+ div)) {
-  border-bottom: 1px solid black;
-}
-
 .additional {
+  padding-top: 0;
+  border-top: none;
   grid-row-start: 4;
-  border-bottom: 1px solid black;
 }
 
 [hidden] {
@@ -270,11 +421,15 @@ nav {
   display: block;
   position: relative;
   border: 1px solid black;
-  border-bottom: none;
+  border-top: none;
   text-align: right;
   width: 100%;
-  height: 400px;
+  height: 279px;
   box-sizing: border-box;
+}
+
+.place-card {
+  display: none !important;
 }
 
 .gmap_canvas {
@@ -310,32 +465,134 @@ nav {
   justify-content: space-between;
   height: 100%;
 }
+.newsletterInput > div:first-of-type {
+  padding-bottom: 10px;
+}
 .newsletterInput .inputContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
   position: relative;
+  height: 30%;
+}
+.newsletterInput label {
+  flex-basis: 0%;
+  height: 100%;
 }
 .newsletterInput input {
-  bottom: 0;
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  box-shadow: 0px 1px 0px 0px #000;
+  transition: width 0.1s ease-in-out;
 }
-.newsletterInput input::-moz-placeholder {
-  font-style: italic;
-}
-.newsletterInput input::placeholder {
-  font-style: italic;
-}
-.newsletterInput .content-name {
+.newsletterInput .content-email {
   position: absolute;
   bottom: 5px;
   left: 0px;
-  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  transition: all 0.1s ease-in-out;
+  color: hsla(0deg, 0%, 0%, 0.5);
 }
-.newsletterInput input:focus .content-name,
-.newsletterInput .form input:valid + .label-name .content-name {
-  transform: translateY(-150%);
-  font-size: 14px;
+.newsletterInput input:focus {
+  outline: none;
+  width: 100%;
+}
+.newsletterInput input:focus + label .content-email,
+.newsletterInput input:valid + label .content-email {
+  transform: translateY(-130%);
+  font-size: 1rem;
+  left: 0px;
+  color: hsl(0deg, 0%, 0%);
+}
+.newsletterInput #arrow {
+  opacity: 0;
+  right: 100%;
+  bottom: 0;
+  width: 0;
+  height: 30px;
+  transition: all 0.1s ease-in-out;
+}
+.newsletterInput #arrow > button {
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.newsletterInput #arrow > button div {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 1px;
+  box-shadow: inset 0px 0px 0px 10px #000;
+}
+.newsletterInput #arrow > button > div:first-child {
+  transform: rotate(45deg) translateY(-50%);
+  top: calc(50% - 4.6px);
+  right: 0.7px;
+}
+.newsletterInput #arrow > button > div:nth-child(2) {
+  width: 30px;
+  right: 2.5px;
+  top: calc(50% - 1.6px);
+}
+.newsletterInput #arrow > button > div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-50%);
+  bottom: calc(50% - 3.5px);
+}
+.newsletterInput #arrow[data-open] {
+  display: block;
+  animation: arrowFadeIn 0.3s forwards;
+}
+.newsletterInput #arrow[data-open] > button div {
+  animation: arrowSlideIn 0.3s forwards;
+}
+.newsletterInput #arrow[data-closing] {
+  pointer-events: none;
+  animation: arrowFadeOut 0.3s forwards;
+}
+.newsletterInput #arrow[data-closing] > button div {
+  animation: arrowSlideOut 0.3s forwards;
+}
+@keyframes arrowFadeIn {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 35px;
+  }
+}
+@keyframes arrowFadeOut {
+  0% {
+    opacity: 1;
+    width: 35px;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+@keyframes arrowSlideIn {
+  0% {
+    right: 200px;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes arrowSlideOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 200px;
+  }
 }
 
 .gedragscode {
@@ -362,16 +619,60 @@ nav {
   margin-right: 10px;
 }
 
+.nomobile {
+  display: none;
+}
+
 [x-cloak] {
   display: none !important;
+}
+
+.border-top {
+  border-top: 1px solid black !important;
+}
+
+.mobileBottom {
+  border-bottom: 1px solid black;
+}
+
+#programme:last-child {
+  border-bottom: 1px solid black;
+}
+
+.right .eventCategory {
+  overflow: visible !important;
 }
 
 @media only screen and (min-width: 460px) {
   .navContent > div:first-child {
     height: 100px;
   }
-  .carousel img {
+  .carousel img, .sidecarousel img {
     min-width: unset;
+  }
+}
+@media only screen and (min-width: 650px) {
+  .residenceContent {
+    display: flex;
+    flex-direction: row-reverse;
+    border-right: 1px solid black;
+  }
+  .residenceContent > * {
+    flex-basis: 50%;
+  }
+  .residenceContent .sidecarousel {
+    border-top: 1px solid black;
+    border-left: none;
+    border-right: 0;
+  }
+  .residenceContent .sidecarousel img {
+    scroll-snap-align: start;
+    min-width: 100%;
+  }
+  .residenceContainer {
+    border-bottom: none;
+    padding: 10px;
+    text-align: justify;
   }
 }
 @media only screen and (min-width: 850px) {
@@ -379,7 +680,7 @@ nav {
     grid-template-columns: 1fr 60vw 1fr !important;
   }
   .border-top {
-    border-top: 1px solid black;
+    border-top: 1px solid black !important;
   }
   .grid {
     display: grid;
@@ -393,30 +694,45 @@ nav {
     border-left: none;
     cursor: pointer;
     border-top: none;
+    border-bottom: 1px solid black;
   }
   .grid .left {
-    padding: 10px;
     grid-column: 1;
     grid-row: 1;
     border-right: none;
     border-bottom: 1px solid black;
   }
   .grid .additional {
-    grid-row: 3;
-    border-top: 1px solid black;
+    grid-row: 3 !important;
   }
   .grid .section {
     grid-column: 2;
     grid-row: 1;
   }
+  .grid .residenceContent {
+    border-bottom: 0;
+  }
+  .grid .resSectionLast {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+  }
+  #programme:last-child {
+    border-bottom: none;
+  }
   .flex {
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
   .carousel img {
     scroll-snap-align: start;
     min-width: 50%;
+  }
+  .bigCarousel .scrollContainer {
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+  }
+  .bigCarousel img {
+    min-width: 100%;
   }
   .prevButton {
     left: 10px;
@@ -441,6 +757,7 @@ nav {
   }
   #roskotcontact {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px !important;
   }
@@ -453,6 +770,54 @@ nav {
   #roskotcontact > div > p {
     padding-bottom: 5px;
   }
+  .nomobile {
+    display: block;
+  }
+  .desktopBorder {
+    border-top: 1px solid black !important;
+  }
+  .mobileBottom {
+    border-bottom: none;
+  }
+  .residenceTitle {
+    border-top: 1px solid black;
+  }
+  .requestResidencyContainer {
+    border-bottom: none;
+  }
+  .right h2 {
+    animation: opacity1 0.6s;
+  }
+  .right h1 {
+    overflow: hidden;
+    transition: ease-in-out 0.2s;
+  }
+  .right .eventCategory {
+    display: none;
+  }
+  .right:hover {
+    transition: ease-in-out 0.1s;
+  }
+  .right:hover .titles {
+    font-size: 3rem;
+    transition: 0.2s;
+  }
+  @keyframes opacity0 {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes opacity1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
 }
 @media only screen and (min-width: 1350px) {
   *, :root {
@@ -460,7 +825,7 @@ nav {
   }
   * h1, :root h1 {
     font-size: 1.4rem;
-    font-weight: lighter;
+    font-weight: 400;
   }
   * p, :root p {
     font-size: 1rem;
@@ -482,16 +847,31 @@ nav {
   .navContent > div:not(:first-child) {
     flex-wrap: nowrap;
   }
-  .navContent > div:not(:first-child) > div {
+  .navContent > div:not(:first-child) > div, .navContent > div:not(:first-child) a {
     flex: 30%;
     padding: 20px 0;
   }
   .grid {
     grid-template-columns: 1fr minmax(500px, 850px) 1fr !important;
   }
+  .artwork-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(500px, 850px) 1fr !important;
+  }
+  .artwork-grid .gallery-items {
+    grid-area: 1/1/span 1/span 2;
+  }
+  .gallery-item {
+    display: grid;
+    grid-template-columns: 1fr minmax(500px, 850px);
+  }
+  .gallery-item section {
+    grid-area: 1/2/span 1/span 1;
+  }
+  .gallery-item .gallery-item-card h1 {
+    overflow-y: auto;
+  }
   .titleBar {
-    padding-top: 5px;
-    padding-bottom: 5px;
     padding-left: 10px;
   }
   .eventContainer {
@@ -500,5 +880,33 @@ nav {
   .gmap_canvas > .iframe-info {
     width: 250px;
     height: 80px;
+  }
+  .animate-flicker span:first-of-type::before {
+    left: -10px;
+    width: 5.183px;
+  }
+  .animate-flicker span:last-of-type::after {
+    right: -10px;
+    top: 0;
+  }
+  .right, .left {
+    padding: 15px;
+  }
+  .additional {
+    grid-row: 3;
+    border-top: none;
+  }
+  .right .eventCategory {
+    display: block;
+  }
+  .right:hover .eventCategory {
+    width: -moz-max-content;
+    width: max-content;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .eventContainer {
+    min-height: 0 !important;
   }
 }

@@ -9,9 +9,8 @@ export default () => ({
     },
     to(strategy) {
         let slider = this.$refs.slider
-        console.log(slider.scrollWidth, slider.offsetWidth)
         let current = slider.scrollLeft
-        let offset = 450
+        let offset = this.$refs.carousel.clientWidth
         slider.scrollTo({left: strategy(current, offset), behavior: "smooth"})
     },
     checkSliderSize(scrollWidth, offsetWidth) {

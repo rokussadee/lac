@@ -21,8 +21,9 @@ return new class extends Migration {
             $table->string('images')->nullable();
             $table->string('location');
             $table->string('doors')->nullable();
-            $table->string('additional_category')->nullable();
-            $table->string('additional_description')->nullable();
+            $table->string('tickets')->nullable();
+            $table->string('additional_category')->default('concert');
+            $table->text('additional_description')->nullable();
             $table->string('additional_link')->nullable();
             $table->timestamps();
         });
