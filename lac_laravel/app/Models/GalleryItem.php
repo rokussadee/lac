@@ -12,11 +12,13 @@ class GalleryItem extends Model
     protected $fillable = [
         'title',
         'images',
+        'videos',
         'description',
         'category'
     ];
 
     protected $casts = [
-        'images' => 'array'
+        'images' => 'array',
+        'videos' => 'array'
     ];
 }

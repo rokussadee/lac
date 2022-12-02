@@ -112,6 +112,10 @@
       <path value="$PROJECT_DIR$/lac_laravel/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/lac_laravel/vendor/riverskies/laravel-mobile-detect" />
       <path value="$PROJECT_DIR$/lac_laravel/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/spatie/laravel-newsletter" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/drewm/mailchimp-api" />
+      <path value="$PROJECT_DIR$/lac_laravel/vendor/spatie/mailcoach-sdk-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

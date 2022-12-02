@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="grid">
+    <div class="grid info">
         <div class="section">
             <div class="titleBar" style="color: red; border-color: red"><h1>public statement</h1></div>
             <div class="gedragscode">
@@ -112,26 +112,41 @@
             <div style="height: .1px">
             </div>
         </div>
+
         <div class="left card desktopBorder mobileBottom">
             <div class="newsletterInput">
                 <div>
                     <h1>subscribe to our newsletter:</h1>
                 </div>
-                <div class="inputContainer">
-                    <input id="email-input" type="text" name="text" autocomplete="off" required/>
+                <form action="{{route('subscribers.store')}}" method="post" class="inputContainer">
+                    @csrf
+                    <input id="email-input" type="email" name="email" autocomplete="off" required/>
                     <label class="label-name"><span class="content-email">e-mail</span>
                         <div id="arrow" x-data>
-                            <button @click="console.log('click')">
+                            <button type="submit" @click="console.log('click')">
                                 <div></div>
                                 <div></div>
                                 <div></div>
                             </button>
                         </div>
                     </label>
+
                     <script>
                         const arrow = document.getElementById('arrow')
                         const input = document.getElementById('email-input')
 
+                        input.addEventListener('focus', () => {
+                            input.setAttribute('data-focus', '')
+                        })
+                        input.addEventListener('focusout', () => {
+                            if (input.value === '') {
+                                input.removeAttribute('data-focus');
+                                if (input.hasAttribute('data-open')) {
+                                    hideArrow()
+                                }
+                            }
+
+                        })
                         input.addEventListener('input', () => {
                             if (input.value === '') {
                                 hideArrow()
@@ -140,11 +155,6 @@
                             }
                         })
 
-                        input.addEventListener('focusout', () => {
-                            if (input.value === '' && input.hasAttribute('data-open')) {
-                                hideArrow()
-                            }
-                        })
 
                         function hideArrow() {
                             arrow.removeAttribute('data-open')
@@ -156,7 +166,16 @@
                         }
 
                     </script>
-                </div>
+                </form>
+                @if(session('error') || session('success'))
+                    <span x-data="{ showMessage: true }" x-show="showMessage"
+                          x-intersect.full="setTimeout(() => showMessage = false, 5000)"
+                        @class([
+                            'message',
+                            'error' => session('error'),
+                            'success' => session('success')]
+                        )>{{session('error')}}{{session('success')}}</span>
+                @endif
             </div>
         </div>
 

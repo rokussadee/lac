@@ -1,12 +1,7 @@
 <div class="gallery-items">
     @foreach($content as $galleryitem)
         <div class="gallery-item">
-            <div
-                class="left card gallery-item-card desktopBorder sectioncontent "
-                {{--            style="grid-row: {{$loop->index}}"--}}
-            >
-                @include('partials.infocard', ['description' => $galleryitem->description])
-            </div>
+
 
             <section
                 x-data="showbuttons"
@@ -18,10 +13,23 @@
                     <h1>in&nbsp;residence
                         /&nbsp;{{$galleryitem->title}}</h1>
                 </div>
-
-                @include('partials.carousel', ['images' => $galleryitem->images])
+                <div class="bigCarousel">
+                    @if($galleryitem->videos  !== null && $galleryitem->images  !== null)
+                        @include('partials.sidecarousel', ['images' => $galleryitem->images,'videos' => $galleryitem->videos])
+                    @elseif($galleryitem->images  !== null)
+                        @include('partials.sidecarousel', ['images' => $galleryitem->images])
+                    @elseif($galleryitem->videos  !== null)
+                        @include('partials.sidecarousel', ['videos' => $galleryitem->videos])
+                    @endif
+                </div>
 
             </section>
+            <div
+                class="left card gallery-item-card desktopBorder sectioncontent "
+                {{--            style="grid-row: {{$loop->index}}"--}}
+            >
+                @include('partials.infocard', ['description' => $galleryitem->description])
+            </div>
         </div>
     @endforeach
 </div>

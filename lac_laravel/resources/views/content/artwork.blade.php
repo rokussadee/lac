@@ -3,8 +3,8 @@
 @section('content')
     <div class="artwork-grid">
 
-        <div
-            style="grid-column: 3; display: grid; grid-auto-rows: 140px;">
+        <div class="artwork-side-nav">
+
             @include('partials.artworksidenav')
         </div>
         @switch($artwork)

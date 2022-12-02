@@ -42,6 +42,17 @@ html {
   background: transparent;
 }
 
+button {
+  margin: 0;
+  width: 100%;
+  border: none;
+  box-sizing: border-box !important;
+  background: none;
+}
+button * {
+  text-align: left;
+}
+
 img {
   filter: saturate(120%) contrast(110%) brightness(110%);
   -webkit-filter: saturate(120%) contrast(110%) brightness(110%);
@@ -87,10 +98,11 @@ a :hover {
   padding-left: 10px;
 }
 .titleBar h1 {
-  font-size: 1.8rem !important;
+  font-size: 1.4rem !important;
 }
 
 nav {
+  position: relative;
   display: grid;
   margin: auto;
 }
@@ -211,15 +223,6 @@ nav {
   margin: 0 !important;
   position: relative;
 }
-.animate-flicker span:first-of-type::before, .animate-flicker span:last-of-type::after {
-  padding: 0;
-  margin: 0;
-  content: "!";
-  background: transparent;
-  color: red;
-  opacity: 1;
-  position: absolute;
-}
 .animate-flicker span:first-of-type::before {
   left: -5px;
   width: 5.183px;
@@ -274,7 +277,7 @@ nav {
 .carousel ::-webkit-scrollbar, .sidecarousel ::-webkit-scrollbar {
   display: none;
 }
-.carousel img, .sidecarousel img {
+.carousel img, .carousel iframe, .sidecarousel img, .sidecarousel iframe {
   flex-grow: 1;
   scroll-snap-align: center;
   scroll-snap-stop: always;
@@ -378,6 +381,12 @@ nav {
 .right {
   padding: 10px;
 }
+.right > div {
+  justify-content: flex-start !important;
+  -webkit-justify-content: flex-start !important;
+  align-self: flex-start !important;
+  -webkit-align-self: flex-start !important;
+}
 
 .section.desktopBorder {
   border-top: 1px solid black;
@@ -396,12 +405,19 @@ nav {
 }
 
 .flex {
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+.flex > div {
+  display: flex;
+  height: -webkit-fill-available;
+  flex-direction: column;
+}
 
 .left {
+  position: relative;
   padding: 10px;
   border-top: none;
   border-bottom: none;
@@ -460,6 +476,7 @@ nav {
 }
 
 .newsletterInput {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -497,10 +514,8 @@ nav {
 }
 .newsletterInput input:focus {
   outline: none;
-  width: 100%;
 }
-.newsletterInput input:focus + label .content-email,
-.newsletterInput input:valid + label .content-email {
+.newsletterInput input[data-focus] + label .content-email {
   transform: translateY(-130%);
   font-size: 1rem;
   left: 0px;
@@ -595,6 +610,27 @@ nav {
   }
 }
 
+.error, .success {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  left: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  background: white;
+}
+
+.error {
+  box-shadow: 0px 0px 0px 1px red;
+  color: red;
+}
+
+.success {
+  box-shadow: 0px 0px 0px 1px black;
+  color: black;
+}
+
 .gedragscode {
   padding: 10px;
   color: red;
@@ -675,12 +711,58 @@ nav {
     text-align: justify;
   }
 }
+.gallery-item-card {
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.gallery-item-card h1 {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: vertical;
+  overflow-y: auto;
+}
+
 @media only screen and (min-width: 850px) {
   nav {
     grid-template-columns: 1fr 60vw 1fr !important;
   }
   .border-top {
     border-top: 1px solid black !important;
+  }
+  .artwork-side-nav {
+    grid-column: 3;
+    display: grid;
+    grid-auto-rows: 140px;
+  }
+  .artwork-side-nav .card {
+    border-left: none;
+  }
+  .artwork-grid {
+    display: grid;
+    grid-template-columns: 1fr 60vw 1fr;
+  }
+  .artwork-grid .gallery-items {
+    grid-area: 1/1/span 1/span 2;
+  }
+  .artwork-grid .gallery-items .gallery-item:last-of-type .bigCarousel {
+    border-bottom: 1px solid black;
+  }
+  .gallery-item {
+    display: grid;
+    grid-template-columns: 1fr 60vw;
+  }
+  .gallery-item section {
+    grid-area: 1/2/span 1/span 1;
+  }
+  .gallery-item .gallery-item-card {
+    border-right: none;
+    border-top: none;
+    height: -moz-min-content;
+    height: min-content;
+    min-height: 140px;
   }
   .grid {
     display: grid;
@@ -719,7 +801,8 @@ nav {
   #programme:last-child {
     border-bottom: none;
   }
-  .flex {
+  .flex { /* OLD - iOS 6-, Safari 3.1-6, BB7 */ /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex !important; /* NEW, Spec - Firefox, Chrome, Opera */
     flex-direction: column;
   }
   .carousel img {
@@ -851,25 +934,11 @@ nav {
     flex: 30%;
     padding: 20px 0;
   }
-  .grid {
+  .grid, .artwork-grid {
     grid-template-columns: 1fr minmax(500px, 850px) 1fr !important;
-  }
-  .artwork-grid {
-    display: grid;
-    grid-template-columns: 1fr minmax(500px, 850px) 1fr !important;
-  }
-  .artwork-grid .gallery-items {
-    grid-area: 1/1/span 1/span 2;
   }
   .gallery-item {
-    display: grid;
     grid-template-columns: 1fr minmax(500px, 850px);
-  }
-  .gallery-item section {
-    grid-area: 1/2/span 1/span 1;
-  }
-  .gallery-item .gallery-item-card h1 {
-    overflow-y: auto;
   }
   .titleBar {
     padding-left: 10px;

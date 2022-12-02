@@ -22,7 +22,7 @@ class EventSeeder extends Seeder
                 'description' => '<p>A collaboration between New Yorker Luke Calzonetti (Run Dust, Sugarstick & Xerox, Childabuse) and Limburgian Stijn Wybouw (KRAMP, Kraak records) of transcendental improv overtones. Undulating layers of synth lashings, cymbal echoes, and some laid-back guitar action mesh in a spaced out trip in the physical and astral plane.</p><br><p>
 A filmic hitchhike to nowhere. Their first LP just came out your way via the great Meakusma avenue.</p><br><a href="https://meakusma.bandcamp.com/album/the-ec-band"><p>https://meakusma.bandcamp.com/album/the-ec-band</p></a>',
                 'images' => json_encode(['EC band Bos 2.jpg', 'Image 20-11-2022 at 23.31.jpeg']),
-                'location' => '28 ninovesteenweg, alost',
+                'location' => '15 rue crickx, brussels',
                 'doors' => '20:00',
                 'tickets' => 'https://www.eventbrite.be/e/going-ec-band-tickets-469871547447'
             ]),
@@ -41,8 +41,6 @@ Due to the leave of one of the members (Mathieu Calleja), Going is researching i
                 'location' => '15 rue crickx, brussels',
                 'doors' => '20:00',
                 'tickets' => 'https://www.eventbrite.be/e/going-ec-band-tickets-469871547447',
-                'additional_category' => 'test',
-                'additional_description' => '<p>this event is a collaboration with belgian record label <a href = "https://www.instagram.com/v23be/">v23</a></p>',
             ]),
             $event3 = Event::create([
                 'title' => 'karim djaoui',
@@ -67,17 +65,6 @@ Facebook : 2kaval
                 'additional_category' => 'exposition',
                 'additional_description' => '<p>karim djaoui&apos;s works are on display in the les ateliers claus headquarters</p>',
             ]),
-//            $event3 = Event::create([
-//                'title' => 'Hogepriester "Cornelis Maria Theresia',
-//                'date' => new Carbon('2022-12-17'),
-//                'date_to' => new Carbon('2023-12-31'),
-//                'description' => '<p>ballekes meeee tmatteSaus
-//</p>
-//<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1375060375%3Fsecret_token%3Ds-PbtBQzxLe0G&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Arial,sans-serif;"> </div>
-//',
-//                'images' => json_encode(['309205617_5604054183021522_8107877733715353418_n.jpg', '310437765_1199459244119328_6809483521739371860_n.jpg', 'verschmutzt2_5.png']),
-//                'location' => '15 rue crickx, brussels',
-//            ]),
         ];
 
     }

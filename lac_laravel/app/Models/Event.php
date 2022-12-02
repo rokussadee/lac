@@ -29,4 +29,5 @@ class Event extends Model
         'date_to' => 'datetime:Y-m-d',
     ];
 
+
 }

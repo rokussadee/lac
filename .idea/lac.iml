@@ -118,6 +118,10 @@
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/riverskies/laravel-mobile-detect" />
       <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/mobiledetect/mobiledetectlib" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/spatie/laravel-newsletter" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/drewm/mailchimp-api" />
+      <excludeFolder url="file://$MODULE_DIR$/lac_laravel/vendor/spatie/mailcoach-sdk-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

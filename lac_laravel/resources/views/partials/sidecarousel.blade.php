@@ -19,20 +19,37 @@ arrow_forward_ios
             @resize.window.debounce.500ms="checkSliderSize($el.scrollWidth, $el.offsetWidth)"
             x-intersect="checkSliderSize($el.scrollWidth, $el.offsetWidth)"
     >
-        @foreach(json_decode($images) as $imgpath)
-            <img src="{{asset("./assets/$imgpath")}}"
-                 x-transition
-                 @if($loop->first && ($loop->count > 1))
-                 x-intersect:leave="showPrev()"
-                 x-intersect.full="hidePrev(), showNext()"
-                 @elseif($loop->last && ($loop->count > 1))
-                 x-intersect:leave="showNext()"
-                 x-intersect.full="hideNext(), showPrev()"
-                 @elseif(!$loop->last && !$loop->first)
-                 x-intersect.threshold.50="showPrev(), showNext()"
-                @endif
-            >
-        @endforeach
+        @if(isset($videos))
+            @foreach(json_decode($videos) as $videopath)
+                <iframe
+                    @if($loop->first && ($loop->count > 1))
+                    x-intersect:leave="showPrev()"
+                    x-intersect.full="hidePrev(), showNext()"
+                    @elseif(!$loop->last && !$loop->first)
+                    x-intersect.threshold.50="showPrev(), showNext()"
+                    @endif
+                    x-transition
+                    src="{{$videopath}}" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            @endforeach
+        @endif
+        @if(isset($images))
+            @foreach(json_decode($images) as $imgpath)
+                <img src="{{asset("./assets/$imgpath")}}"
+                     x-transition
+                     @if($loop->first && ($loop->count > 1))
+                     x-intersect:leave="showPrev()"
+                     x-intersect.full="hidePrev(), showNext()"
+                     @elseif($loop->last && ($loop->count > 1))
+                     x-intersect:leave="showNext()"
+                     x-intersect.full="hideNext(), showPrev()"
+                     @elseif(!$loop->last && !$loop->first)
+                     x-intersect.threshold.50="showPrev(), showNext()"
+                    @endif
+                >
+            @endforeach
+        @endif
     </figure>
     <button
         x-cloak

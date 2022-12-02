@@ -5,20 +5,29 @@
         x-data="{activeTab: 'tab1'}"
         class="grid">
         <div
-            @click="activeTab = 'tab1'"
             :class="{'activelink' : activeTab === 'tab1'}"
             class="right card border-top"
             data-id="tab1"
             style="display: block">
-            @include('partials.card', ['title' => 'artists'])
+            <button
+                @click="activeTab = 'tab1'"
+                class="flex"
+            >
+
+                @include('partials.card', ['title' => 'artists'])
+            </button>
         </div>
         <div
-            @click="activeTab = 'tab2'"
             :class="{'activelink' : activeTab === 'tab2'}"
             class="right card mobileBottom"
             data-id="tab2"
             style="display: block">
-            @include('partials.card', ['title' => 'request a residency'])
+            <button
+                @click="activeTab = 'tab2'"
+                class="flex"
+            >
+                @include('partials.card', ['title' => 'request a residency'])
+            </button>
         </div>
         <div x-show="activeTab === 'tab1'"
              class="left card sectioncontent nomobile  border-top"
@@ -55,8 +64,8 @@
                         class="residenceSection section1 sectioncontent {{$loop->iteration + count($currentresidencies) == count($upcoming) + count($currentresidencies) ? 'resSectionLast' : ''}}"
                     >
                         <div class="titleBar residenceTitle">
-                            <h1>{{$residency->date}}
-                                &DoubleLongRightArrow;&nbsp;{{$residency->date_to}}
+                            <h1>{!! Helper::dateToString($residency->date) !!}
+                                &DoubleLongRightArrow;&nbsp;{!! Helper::dateToString($residency->date_to) !!}
                                 /&nbsp;{{$residency->title}}</h1>
                         </div>
                         <div class="residenceContent ">

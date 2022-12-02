@@ -6,12 +6,14 @@
          class="grid"
     >
         @foreach($events as $event)
-            <div @click="activeTab = {{$loop->index}}"
-                 :class="{'activelink' : activeTab === {{$loop->index}}}"
-                 class="right card @if($loop->first) border-top @endif"
-                 data-id="{{$loop->index}}"
-                 style="display: block">
-                @include('partials.card', ['title' => $event->title, 'date' => $event->date, 'date_to' => $event->date_to, 'category'  => $event->additional_category])
+            <div
+                :class="{'activelink' : activeTab === {{$loop->index}}}"
+                class="right card @if($loop->first) border-top @endif"
+            >
+                <button @click="activeTab = {{$loop->index}}"
+                        class="flex">
+                    @include('partials.card', ['title' => $event->title, 'date' => $event->date, 'date_to' => $event->date_to, 'category'  => $event->additional_category])
+                </button>
             </div>
             <section x-show="activeTab === {{$loop->index}}"
                      x-data="showbuttons"

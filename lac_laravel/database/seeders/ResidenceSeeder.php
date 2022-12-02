@@ -63,15 +63,6 @@ Due to the leave of one of the members (Mathieu Calleja), Going is researching i
                 'location' => 'les ateliers claus',
                 'links' => json_encode(['https://goingmusic.bandcamp.com/'])
             ]),
-            $residence4 = Residence::create([
-                'title' => 'aRottenBoobyChest',
-                'date' => new Carbon('2022-11-12'),
-                'date_to' => new Carbon('2022-12-16'),
-                'description' => '<p>cornelis de geweldige producer in samenwerking met 1s1us</p>',
-                'images' => json_encode(['309205617_5604054183021522_8107877733715353418_n.jpg', '310437765_1199459244119328_6809483521739371860_n.jpg', 'verschmutzt2_5.png', '67a86c6e-ad71-4c5b-bab1-45f83d2ecd44.png', '8d794bfd-f621-4701-bd27-0dd935b91634.png']),
-                'location' => 'roskot',
-                'links' => json_encode(['https://soundcloud.com/ene1cornelis', 'https://soundcloud.com/1s1us'])
-            ])
         ];
     }
 }
