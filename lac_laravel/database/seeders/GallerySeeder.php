@@ -30,10 +30,10 @@ class GallerySeeder extends Seeder
             $item3 = GalleryItem::create([
                 'title' => 'Tomaga & Pierre Bastien live at les ateliers claus',
                 'images' => json_encode(['26015849403_c55ee6b96c_b.jpeg', 'A-3433688-1559379928-1329.jpeg']),
-                'videos' => json_encode(['https://www.youtube-nocookie.com/embed/5iGQiD2r3O0']),
+                'videos' => json_encode(['5iGQiD2r3O0']),
                 'description' => '<p>Tomaga & Pierre Bastien live at les ateliers claus</p>',
                 'category' => 'concert'
-            ]),
+            ])
 
         ];
     }

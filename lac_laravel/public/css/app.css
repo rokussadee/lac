@@ -35,10 +35,10 @@ html {
   background: red;
   color: white;
 }
-* img::-moz-selection, :root img::-moz-selection {
+* .carousel-image::-moz-selection, :root .carousel-image::-moz-selection {
   background: transparent;
 }
-* img::selection, :root img::selection {
+* .carousel-image::selection, :root .carousel-image::selection {
   background: transparent;
 }
 
@@ -53,7 +53,7 @@ button * {
   text-align: left;
 }
 
-img {
+.carousel-image {
   filter: saturate(120%) contrast(110%) brightness(110%);
   -webkit-filter: saturate(120%) contrast(110%) brightness(110%);
 }
@@ -277,7 +277,7 @@ nav {
 .carousel ::-webkit-scrollbar, .sidecarousel ::-webkit-scrollbar {
   display: none;
 }
-.carousel img, .carousel iframe, .sidecarousel img, .sidecarousel iframe {
+.carousel .carousel-image, .carousel .video-container, .sidecarousel .carousel-image, .sidecarousel .video-container {
   flex-grow: 1;
   scroll-snap-align: center;
   scroll-snap-stop: always;
@@ -286,6 +286,21 @@ nav {
   -o-object-fit: cover;
      object-fit: cover;
   block-size: calc(100% - 25px);
+}
+.carousel .video-container > div, .sidecarousel .video-container > div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel .video-container > div > iframe, .sidecarousel .video-container > div > iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .sidecarousel {
@@ -683,7 +698,7 @@ nav {
   .navContent > div:first-child {
     height: 100px;
   }
-  .carousel img, .sidecarousel img {
+  .carousel .carousel-image, .sidecarousel .carousel-image {
     min-width: unset;
   }
 }
@@ -701,7 +716,7 @@ nav {
     border-left: none;
     border-right: 0;
   }
-  .residenceContent .sidecarousel img {
+  .residenceContent .sidecarousel .carousel-image {
     scroll-snap-align: start;
     min-width: 100%;
   }
@@ -805,7 +820,7 @@ nav {
     display: flex !important; /* NEW, Spec - Firefox, Chrome, Opera */
     flex-direction: column;
   }
-  .carousel img {
+  .carousel .carousel-image {
     scroll-snap-align: start;
     min-width: 50%;
   }
@@ -814,7 +829,7 @@ nav {
     height: 400px;
     position: relative;
   }
-  .bigCarousel img {
+  .bigCarousel .carousel-image {
     min-width: 100%;
   }
   .prevButton {

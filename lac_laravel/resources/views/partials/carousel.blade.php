@@ -21,16 +21,18 @@ arrow_forward_ios
             x-intersect="checkSliderSize($el.scrollWidth, $el.offsetWidth)"
     >
         @foreach(json_decode($images) as $imgpath)
-            <img src="{{asset("./assets/$imgpath")}}"
-                 x-transition
-                 @if($loop->first && ($loop->count > 1))
-                 x-intersect:leave="showPrev()"
-                 x-intersect.full="hidePrev(), showNext()"
-                 @elseif($loop->last && ($loop->count > 1))
-                 x-intersect:leave="showNext()"
-                 x-intersect.full="hideNext(), showPrev()"
-                 @elseif(!$loop->last && !$loop->first)
-                 x-intersect.threshold.50="showPrev(), showNext()"
+            <img
+                class="carousel-image"
+                src="{{asset("/assets/$imgpath")}}"
+                x-transition
+                @if($loop->first && ($loop->count > 1))
+                x-intersect:leave="showPrev()"
+                x-intersect.full="hidePrev(), showNext()"
+                @elseif($loop->last && ($loop->count > 1))
+                x-intersect:leave="showNext()"
+                x-intersect.full="hideNext(), showPrev()"
+                @elseif(!$loop->last && !$loop->first)
+                x-intersect.threshold.50="showPrev(), showNext()"
                 @endif
             >
         @endforeach

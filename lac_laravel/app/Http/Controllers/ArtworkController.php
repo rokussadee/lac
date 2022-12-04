@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GalleryItem;
+use Illuminate\Support\Facades\DB;
 
 class ArtworkController extends Controller
 {
