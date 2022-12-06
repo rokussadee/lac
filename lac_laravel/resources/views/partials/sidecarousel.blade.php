@@ -22,7 +22,7 @@ arrow_forward_ios
         @isset($videos)
             @foreach(json_decode($videos) as $videopath)
                 <div class="video-container"
-                     x-transition--}}
+                     x-transition
                      @if(isset($images))
                      @if(!$loop->first)
                      x-intersect.threshold.50="showPrev(), showNext()"
@@ -65,7 +65,7 @@ arrow_forward_ios
                             margin: 0;
                           }
 
-                          svg {
+                          button, span {
                             position:absolute;
                             top: 50%;
                             left: 50%;
@@ -74,13 +74,18 @@ arrow_forward_ios
                             transition: all 250ms ease-in-out;
                           }
 
-                          body:hover svg {
+                          body:hover button, span {
                             filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
                           }
                         </style>
+                        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0' />
                         <a href='https://www.youtube.com/embed/{{$videopath}}?autoplay=1'>
-                          <img src='https://img.youtube.com/vi/{{$videopath}}/hqdefault.jpg' alt='Coffee Recipe Javascript Project'>
-                          <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
+                              <img src='https://img.youtube.com/vi/{{$videopath}}/hqdefault.jpg' alt='Coffee Recipe Javascript Project'>
+                              <button style='width: 45px; height: 33.5px; color:black; background:white; border: 1px solid black;'>
+                              <span style='font-size: 30px; display:block;overflow:hidden; margin: 0;' class='material-symbols-outlined'>
+                            play_arrow
+                            </span>
+                              </button>
                         </a>
                         "
                             src="https://www.youtube.com/embed/{{$videopath}}"
@@ -91,31 +96,6 @@ arrow_forward_ios
                         </iframe>
                     </div>
                 </div>
-                {{--                <iframe--}}
-                {{--                    src="{{$videopath}}?rel=0&showinfo=0&autohide=1" loading="lazy" title="YouTube video player"--}}
-                {{--                    frameborder="0"--}}
-                {{--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"--}}
-                {{--                    allowfullscreen--}}
-                {{--                    x-transition--}}
-                {{--                    @if(isset($images))--}}
-                {{--                    @if(!$loop->first)--}}
-                {{--                    x-intersect.threshold.50="showPrev(), showNext()"--}}
-                {{--                    @else--}}
-                {{--                    x-intersect:leave="showPrev()"--}}
-                {{--                    x-intersect.full="hidePrev(), showNext()"--}}
-                {{--                    @endif--}}
-                {{--                    @else--}}
-                {{--                    @if($loop->first && $loop->count > 1)--}}
-                {{--                    x-intersect:leave="showPrev()"--}}
-                {{--                    x-intersect.full="hidePrev(), showNext()"--}}
-                {{--                    @elseif($loop->last && $loop->count > 1)--}}
-                {{--                    x-intersect:leave="showNext()"--}}
-                {{--                    x-intersect.full="hideNext(), showPrev()"--}}
-                {{--                    @elseif(!$loop->last && !$loop->first)--}}
-                {{--                    x-intersect.threshold.50="showPrev(), showNext()"--}}
-                {{--                    @endif--}}
-                {{--                    @endif--}}
-                {{--                ></iframe>--}}
             @endforeach
         @endisset
         @isset($images)

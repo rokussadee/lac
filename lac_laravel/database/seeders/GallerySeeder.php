@@ -25,7 +25,7 @@ class GallerySeeder extends Seeder
                 'title' => 'roskot rooster',
                 'images' => json_encode(['L1088981.jpg']),
                 'description' => '<p>for roskot&apos;s second edition, a giant rooster was built in the garden</p><br><p>the work is part of roskot&apos;s permanent collection</p>',
-                'category' => 'exposition'
+                'category' => 'monument'
             ]),
             $item3 = GalleryItem::create([
                 'title' => 'Tomaga & Pierre Bastien live at les ateliers claus',

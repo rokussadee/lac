@@ -15,9 +15,14 @@ html {
   font-weight: 400;
 }
 * p, :root p {
+  overflow-wrap: break-word;
   font-size: 1rem;
   text-align: justify;
   font-weight: 400;
+}
+* small, :root small {
+  font-size: 0.8rem;
+  color: red;
 }
 * h2, :root h2 {
   font-size: 1.2rem;
@@ -53,7 +58,7 @@ button * {
   text-align: left;
 }
 
-.carousel-image {
+.carousel img {
   filter: saturate(120%) contrast(110%) brightness(110%);
   -webkit-filter: saturate(120%) contrast(110%) brightness(110%);
 }
@@ -241,6 +246,62 @@ nav {
 
 .nowiggle span::before, .nowiggle span::after {
   display: none;
+}
+
+.artwork-grid .gazette-items {
+  border: 1px solid black;
+  border-top: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(130px, 25.1%), 1fr)); /*this */
+  gap: 10px;
+}
+.artwork-grid .gazette-items .gazette-item {
+  position: relative;
+  overflow: hidden;
+}
+.artwork-grid .gazette-items .gazette-item *::before {
+  background: none;
+}
+.artwork-grid .gazette-items .gazette-item .overlay {
+  position: absolute;
+  z-index: 10;
+  bottom: -100%;
+  opacity: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all ease-in-out 0.3s;
+}
+.artwork-grid .gazette-items .gazette-item .overlay .overlaytext {
+  display: flex;
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+  flex-direction: column;
+  background: white;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.artwork-grid .gazette-items .gazette-item img {
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+.artwork-grid .gazette-items .gazette-item:hover h2 {
+  color: black;
+}
+.artwork-grid .gazette-items .gazette-item:hover h2:hover {
+  background: red !important;
+  color: white;
+}
+.artwork-grid .gazette-items .gazette-item:hover small:hover {
+  color: red;
+}
+.artwork-grid .gazette-items .gazette-item:hover .overlay {
+  bottom: 5px;
+  opacity: 1;
+}
+.artwork-grid .gazette-items .gazette-item:hover img {
+  scale: 1.01;
 }
 
 .scrollContainer {
@@ -759,6 +820,11 @@ nav {
     display: grid;
     grid-template-columns: 1fr 60vw 1fr;
   }
+  .artwork-grid .gazette-items {
+    border: 1px solid black;
+    grid-area: 1/2/span 1/span 1;
+    gap: 10px;
+  }
   .artwork-grid .gallery-items {
     grid-area: 1/1/span 1/span 2;
   }
@@ -987,6 +1053,16 @@ nav {
     width: -moz-max-content;
     width: max-content;
     font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .artwork-grid .gazette-items {
+    border: 1px solid black;
+    border-top: none;
+    gap: 5px;
+  }
+  .artwork-grid .gazette-items .gazette-item img {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 850px) {

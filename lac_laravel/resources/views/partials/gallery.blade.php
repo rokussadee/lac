@@ -10,7 +10,7 @@
                     "
             >
                 <div class="titleBar residenceTitle">
-                    <h1>in&nbsp;residence
+                    <h1>{{$galleryitem->category}}
                         /&nbsp;{{$galleryitem->title}}</h1>
                 </div>
                 <div class="bigCarousel">

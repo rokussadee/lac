@@ -18,9 +18,15 @@ html {
     }
 
     p {
+        overflow-wrap: break-word;
         font-size: 1rem;
         text-align: justify;
         font-weight: 400;
+    }
+
+    small {
+        font-size: .8rem;
+        color: red;
     }
 
     h2 {
@@ -57,7 +63,7 @@ button {
     }
 }
 
-.carousel-image {
+.carousel img {
     filter: saturate(120%) contrast(110%) brightness(110%);
     -webkit-filter: saturate(120%) contrast(110%) brightness(110%);
 }
@@ -375,6 +381,71 @@ nav {
     display: none;
 }
 
+.artwork-grid {
+    .gazette-items {
+        border: 1px solid black;
+        border-top: none;
+        $w: 130px;
+        $n: 3;
+        display: grid;
+        grid-template-columns:repeat(auto-fit, minmax(max($w, 100% / ($n + 1) + 0.1%), 1fr)); /*this */
+        gap: 10px;
+
+        .gazette-item {
+            position: relative;
+            overflow: hidden;
+            *::before {
+                background: none;
+            }
+            .overlay {
+                position: absolute;
+                z-index: 10;
+                bottom: -100%;
+                opacity: 0;
+                left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                transition: all ease-in-out .3s;
+                .overlaytext {
+                    display: flex;
+                    width: calc(100% - 10px);
+                    box-sizing: border-box;
+                    flex-direction: column;
+                    background: white;
+                    border: 1px solid black;
+                    margin: 5px;
+                    padding: 5px;
+                }
+            }
+            img {
+                width: 100%;
+                transition: all ease-in-out .3s;
+            }
+        }
+
+        .gazette-item:hover {
+            h2 {
+                color: black
+            };
+            h2:hover {
+                background: red !important;
+                color: white;
+            }
+            small:hover {
+                color: red;
+            }
+            .overlay {
+                bottom: 5px;
+                opacity: 1;
+            }
+            img {
+                scale: 1.01;
+            }
+
+        }
+    }
+}
+
 
 // carousel
 .scrollContainer {
@@ -422,7 +493,6 @@ nav {
         min-width: 100%;
         height: 100%;
         object-fit: cover;
-        //min-height: 100%;
         block-size: calc(100% - 25px);
     }
 
@@ -958,6 +1028,13 @@ nav {
         text-align: justify;
     }
 
+    .artwork-grid {
+        .gazette-items {
+            .gazette-item {
+                //flex: 0 1 calc(33% - 5px);
+            }
+        }
+    }
 }
 
 .gallery-item-card {
@@ -999,6 +1076,15 @@ nav {
         display: grid;
         grid-template-columns: 1fr 60vw 1fr;
 
+        .gazette-items {
+            border: 1px solid black;
+            grid-area: 1 / 2 / span 1 / span 1;
+            gap: 10px;
+
+            .gazette-item {
+                //flex: 0 1 calc(33% - 10px);
+            }
+        }
 
         .gallery-items {
             grid-area: 1 / 1 / span 1 / span 2;
@@ -1330,6 +1416,27 @@ nav {
         .eventCategory {
             width: max-content;
             font-size: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .artwork-grid {
+        .gazette-items {
+            border: 1px solid black;
+            border-top: none;
+            //display: flex;
+            //flex-direction: column;
+            //flex-wrap: wrap;
+            gap: 5px;
+
+            .gazette-item {
+                //flex: 0 1 calc(100% - 5px);
+
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }

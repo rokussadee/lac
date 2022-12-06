@@ -3,18 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\GalleryItem;
+use App\Models\GazetteItem;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class ArtworkController extends Controller
 {
-//    public function getIndex($category)
-//    {
-//        switch ($category) {
-//            case('gallery'):
-//                $content = GalleryItem::class::all();
-//        }
-//        return view('content.artwork', ['category' => $category, 'content' => $content]);
-//    }
 
     public function getGallery()
     {
@@ -24,7 +18,11 @@ class ArtworkController extends Controller
 
     public function getGazettes()
     {
-        $content = GalleryItem::class::all();
+        $collection = GazetteItem::class::all();
+
+        $content = collect($collection)->sortByDesc(function ($obj) {
+            return Carbon::parse($obj['publication_date'])->getTimestamp();
+        });
         return view('content.artwork', ['artwork' => 'gazettes', 'content' => $content]);
     }
 

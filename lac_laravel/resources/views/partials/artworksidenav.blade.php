@@ -2,7 +2,7 @@
     class="right card border-top {{\Illuminate\Support\Facades\Route::currentRouteName() == 'artwork.gallery' ? 'activelink' : ''}}"
 >
     <button
-        @click="location.href = {{url('artwork.gallery')}}"
+        onclick="location.href = '{{url('artwork/gallery')}}'"
         class="flex"
     >
         @include('partials.card', ['title' => 'gallery'])
@@ -12,18 +12,17 @@
     class="right card  {{\Illuminate\Support\Facades\Route::currentRouteName() == 'artwork.gazettes' ? 'activelink' : ''}}"
 >
     <button
-        @click="location.href = {{url('artwork.gazettes')}}"
+        onclick="location.href = '{{url('artwork/gazettes')}}'"
         class="flex"
     >
         @include('partials.card', ['title' => 'gazettes'])
     </button>
 </div>
 <div
-    @click="location.href = {{url('artwork.objects')}}"
     class="right card  {{\Illuminate\Support\Facades\Route::currentRouteName() == 'artwork.objects' ? 'activelink' : ''}}"
 >
     <button
-        @click="location.href = {{url('artwork.objects')}}"
+        onclick="location.href = '{{url('artwork/objects')}}'"
         class="flex"
     >
         @include('partials.card', ['title' => 'objects'])
@@ -34,7 +33,7 @@
     style="border-bottom: 1px solid black"
 >
     <button
-        @click="location.href = {{url('artwork.albums')}}"
+        onclick="location.href = '{{url('artwork/albums')}}'"
         class="flex"
     >
         @include('partials.card', ['title' => 'albums'])

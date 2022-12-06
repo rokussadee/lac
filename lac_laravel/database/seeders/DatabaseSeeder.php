@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ResidenceSeeder::class);
         $this->call(StaticSeeder::class);
         $this->call(GallerySeeder::class);
+        $this->call(GazetteSeeder::class);
     }
 }
