@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'les ateliers claus'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool)env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,16 +185,20 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Golchha21\ReSmushIt\Providers\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
+        \App\Providers\FortifyServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -213,6 +217,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Helper' => \App\Helpers\Helper::class,
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ])->toArray(),
 
 ];

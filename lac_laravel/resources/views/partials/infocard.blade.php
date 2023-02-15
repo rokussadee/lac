@@ -8,10 +8,9 @@
             @endif
         </div>
     @endif
-    @if((isset($link)))
+    @if(isset($link) && $link!='')
         <div>
-
-            <a href="{{$link}}"><h1>tickets</h1></a>
+            <a target="_blank" href="{{$link}}"><h1>tickets</h1></a>
         </div>
-    @endif
+    @endisset
 </div>

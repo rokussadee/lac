@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'artwork'])
 
 @section('content')
     <div class="artwork-grid">
@@ -14,8 +14,6 @@
             @case('gazettes')
             @include('partials.gazettes')
             @break
-            @case('objects')
-            @include('partials.objects')
             @break
             @case('albums')
             @include('partials.albums')

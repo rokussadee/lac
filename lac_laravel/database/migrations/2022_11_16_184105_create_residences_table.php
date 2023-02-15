@@ -15,12 +15,15 @@ return new class extends Migration {
         Schema::create('residences', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('date');
-            $table->date('date_to');
-            $table->text('description');
+            $table->string('slug')->unique();
+            $table->date('date')->nullable();
+            $table->date('date_to')->nullable();
+            $table->text('description')->nullable();
             $table->string('images')->nullable();
-            $table->string('location');
-            $table->string('links')->nullable();
+            $table->string('videos')->nullable();
+            $table->string('location')->nullable();
+            $table->text('links')->nullable();
+            $table->boolean('isActive')->default(false);
             $table->timestamps();
         });
     }

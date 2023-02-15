@@ -42,59 +42,7 @@ arrow_forward_ios
                     @endif
                     @endif
                 >
-                    <div>
-                        <iframe
-                            loading="lazy" ;
-                            srcdoc="<style>
-                          * {
-                          padding: 0;
-                          margin: 0;
-                          overflow: hidden;
-                          }
-
-                          body, html {
-                            width: 100%;
-                          }
-
-                          img{
-                            position: absolute;
-                            width: 100%;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            margin: 0;
-                          }
-
-                          button, span {
-                            position:absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
-                            transition: all 250ms ease-in-out;
-                          }
-
-                          body:hover button, span {
-                            filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
-                          }
-                        </style>
-                        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0' />
-                        <a href='https://www.youtube.com/embed/{{$videopath}}?autoplay=1'>
-                              <img src='https://img.youtube.com/vi/{{$videopath}}/hqdefault.jpg' alt='Coffee Recipe Javascript Project'>
-                              <button style='width: 45px; height: 33.5px; color:black; background:white; border: 1px solid black;'>
-                              <span style='font-size: 30px; display:block;overflow:hidden; margin: 0;' class='material-symbols-outlined'>
-                            play_arrow
-                            </span>
-                              </button>
-                        </a>
-                        "
-                            src="https://www.youtube.com/embed/{{$videopath}}"
-                            title="Coffee Recipe Javascript Project"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+                    @include('partials.video-content', ['videopath' => $videopath])
                 </div>
             @endforeach
         @endisset
@@ -102,7 +50,7 @@ arrow_forward_ios
             @foreach(json_decode($images) as $imgpath)
                 <img
                     class="carousel-image"
-                    src="{{asset("/assets/$imgpath")}}"
+                    src="{{asset("/storage/images/$imgpath")}}"
                     x-transition
                     @if(isset($videos))
                     @if(!$loop->last)

@@ -13,21 +13,27 @@ class Event extends Model
         'title',
         'date',
         'date_to',
+        'slug',
         'description',
         'images',
         'location',
         'doors',
         'tickets',
-        'additional_category' => 'concert',
+        'isActive',
+        'additional_category',
         'additional_description',
-        'additional_link'
     ];
 
     protected $casts = [
         'images' => 'array',
         'date' => 'datetime:Y-m-d',
-        'date_to' => 'datetime:Y-m-d',
+        'date_to' => 'datetime:Y-m-d'
     ];
+
+    public function artists()
+    {
+        return $this->belongsToMany(Artist::class);
+    }
 
 
 }

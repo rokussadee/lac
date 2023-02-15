@@ -14,10 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(EventSeeder::class);
         $this->call(ResidenceSeeder::class);
         $this->call(StaticSeeder::class);
         $this->call(GallerySeeder::class);
         $this->call(GazetteSeeder::class);
+        $this->call(AlbumSeeder::class);
+        $this->call(ArtistSeeder::class);
     }
 }

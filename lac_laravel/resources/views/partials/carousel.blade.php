@@ -18,12 +18,18 @@ arrow_forward_ios
     <figure class="carousel"
             x-ref="slider"
             @resize.window.debounce.500ms="checkSliderSize($el.scrollWidth, $el.offsetWidth)"
-            x-intersect="checkSliderSize($el.scrollWidth, $el.offsetWidth)"
+            x-intersect="
+            checkSliderSize($el.scrollWidth, $el.offsetWidth)
+{{--                checkSliderSize($refs.carousel.clientWidth, $el.scrollWidth)--}}
+            {{--                alert($el.scrollWidth), alert($el.offsetWidth)--}}
+                "
+
     >
         @foreach(json_decode($images) as $imgpath)
             <img
+                alt="{{$alt}}"
                 class="carousel-image"
-                src="{{asset("/assets/$imgpath")}}"
+                src="{{asset("/storage/images/$imgpath")}}"
                 x-transition
                 @if($loop->first && ($loop->count > 1))
                 x-intersect:leave="showPrev()"

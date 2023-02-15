@@ -3,7 +3,7 @@
 >
     <button
         onclick="location.href = '{{url('artwork/gallery')}}'"
-        class="flex"
+        class="card-button"
     >
         @include('partials.card', ['title' => 'gallery'])
     </button>
@@ -13,19 +13,9 @@
 >
     <button
         onclick="location.href = '{{url('artwork/gazettes')}}'"
-        class="flex"
+        class="card-button"
     >
         @include('partials.card', ['title' => 'gazettes'])
-    </button>
-</div>
-<div
-    class="right card  {{\Illuminate\Support\Facades\Route::currentRouteName() == 'artwork.objects' ? 'activelink' : ''}}"
->
-    <button
-        onclick="location.href = '{{url('artwork/objects')}}'"
-        class="flex"
-    >
-        @include('partials.card', ['title' => 'objects'])
     </button>
 </div>
 <div
@@ -34,7 +24,7 @@
 >
     <button
         onclick="location.href = '{{url('artwork/albums')}}'"
-        class="flex"
+        class="card-button"
     >
         @include('partials.card', ['title' => 'albums'])
     </button>

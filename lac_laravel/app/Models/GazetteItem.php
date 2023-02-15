@@ -18,6 +18,6 @@ class GazetteItem extends Model
     ];
 
     protected $casts = [
-        'publication_date' => 'datetime:Y-m-d'
+        'publication_date' => 'datetime::Y-m-d'
     ];
 }
