@@ -37,6 +37,7 @@ Route::prefix('artwork')->name('artwork.')->group(function () {
 
 Route::prefix('archive')->name('archive.')->group(function () {
     Route::get('events', [EventController::class, 'getEventArchive'])->name('events');
+    Route::get('artist/{artist:slug}', [EventController::class, 'getEvent'])->name('artist');
     Route::get('residencies', [ResidenceController::class, 'getResidencyArchive'])->name('residencies');
 });
 

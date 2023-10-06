@@ -259,6 +259,299 @@ https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
                 'location' => '15 rue crickx, brussels',
                 'isActive' => true
             ]),
+            $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]),
+            $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]),
+            $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]),
+            $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]),
+            $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]), $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]), $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]), $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]), $event10 = Event::create([
+                'title' => 'an evening of iranian electronic music: 9t antiope + rojin sharafi',
+                'slug' => Helper::createSlug('App\Models\Event', 'an evening of iranian electronic music: 9t antiope + rojin sharafi'),
+                'date' => new Carbon('2023-03-04'),
+                'doors' => '20:00',
+                'tickets' => 'https://www.eventbrite.be/e/9t-antiope-iran-rojin-sharafi-iran-tickets-525496733877',
+                'description' => '
+                9T Antiope, derived from 90 Antiope double-asteroid in the Solar System between Mars and Jupiter, is a duo of Paris based-Iranian musicians Nima Aghiani and Sara Bigdeli Shamloo. Focussed on experimental music using layers of acoustic instruments, electronics and combining them with vocals and lyrics, in order to narrate tiny bits or huge landscapes of the chaotic worlds they envision. Their music expresses bleak feelings, inspired by the unrelentingly “brutal, unjust and angry” state of the world, and often takes unpredictable turns around sharp corners into darker, noisier passages.
+
+They have released music on reputed labels such as PTP (Purple Tape Pedigree), Eilean Rec., Hallow Ground, Flaming Pines, Unperceived Records and an upcoming project on American Dreams
+"Whatever it might mean, it is absolutely gripping, immersive and surrealistic, cinema without sight." Philip Sherborne – Pitchfork
+“A sort of sonic thought experiment, as cerebral as it is visceral” The Wire
+
+www.9tantiope.com
+https://purpletapepedigree.bandcamp.com/album/placebo
+https://eileanrec.bandcamp.com/album/grima
+
+
+Rojin Sharafi is Vienna-based, Tehran-born artist that draws on cinematic and literary influences in her acoustic, electro-acoustic, and electronic music. She creates entirely unique musical textures through the use of analogue, and augmented instruments and sometimes acoustic instruments like the santur and piano. Her songs blend noise, folk, ambient, metal, and contemporary music with layers of narrative to produced “engineered chaos”. Sounds stretch and reverberate as her songs fiddle with temporal and structural restrictions.
+
+Sharafi has been part of the line-up at international festivals such as SET x CTM 2018 (Tehran), Unsafe + Sounds 2018 (Vienna), Hyperreality 2019 (Vienna), Wiener Festwochen 2020 (Vienna) and released on labels such as Zabte Sote and Ventil records
+
+“Sharafi plays by no known rules and sculpts by no known methods” Tristan Bath, The Quietus
+“Sharafi is one of the many Iranian composer…exploring the outer limits of electronic music” Bandcamp Daily
+
+www.rojinsharafi.com
+https://rojinsharafi.bandcamp.com/album/kariz
+https://zabtesote.bandcamp.com/album/zangaar
+https://zabtesote.bandcamp.com/album/urns-waiting-to-be-fed',
+                'images' => json_encode(['EventCoverPhoto.jpg', '9T-Antiope-1170x780.jpg']),
+                'location' => '15 rue crickx, brussels',
+                'isActive' => true
+            ]),
 
 //             geier aus stahl is one of many guises of multi-disciplinary artist leonard prochazka. geier is a figure investigating on destructive power relations, autonomy and questions concerning „the self“. in summer 2022 he released his debut album „strapazen und genesung“ (strain and recovery) on the dutch label knekelhuis which was named unmistakable throwback record with influences from the top tier of cold wave electronics, industrial and vintage electro-pop. (boomkat) for a tour in spring of 2023 the project is undergoing a process of transformation to appear in a band formation for the very first time consisting of paul ebhart (electronix), hannah todt (guitar, bass) and leonard prochazka (drums, voice).“
 //bandcamp: https://bit.ly/3ilvnqosoundcloud: https://bit.ly/3uatvjd

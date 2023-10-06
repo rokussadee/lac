@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Event;
+use Illuminate\Http\RedirectResponse;
 
 class EventController extends Controller
 {
@@ -28,5 +29,29 @@ class EventController extends Controller
     {
         return view('content.archive', ['archive' => 'events']);
 
+    }
+
+    /**
+     * soft delete post
+     *
+     * @return RedirectResponse
+     */
+    public function destroy($id)
+    {
+        Event::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    /**
+     * restore specific post
+     *
+     * @return RedirectResponse
+     */
+    public function restore($id)
+    {
+        Event::onlyTrashed()->find($id)->restore();
+
+        return redirect()->back();
     }
 }

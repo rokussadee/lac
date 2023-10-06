@@ -71,9 +71,9 @@
                                     :model="$item"
                                     :field="'isActive'">
             </livewire:toggle-switch>
-            <button class="delete-button">
-                <span class="material-symbols-outlined">delete</span>
-            </button>
+            <livewire:delete-button :wire:key="$item->id"
+                                    :model="$item"
+            ></livewire:delete-button>
         </div>
     </section>
 </div>

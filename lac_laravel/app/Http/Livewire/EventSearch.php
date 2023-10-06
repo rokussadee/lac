@@ -90,12 +90,10 @@ class EventSearch extends Component
                 $this->cumsum += 1;
             }
         } elseif ($this->sort == false) {
-//            dd($this->filteredEvents);
             foreach ($this->events as $event) {
                 array_push($this->filteredEvents[$event->date->format('M')], $event);
                 $this->cumsum += 1;
             }
-
         }
     }
 }
