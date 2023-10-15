@@ -2,9 +2,11 @@
 
 ## Deployment
 
-To deploy this project;
+To deploy this project:
 
-Run MySQL test database, then;
+Create .env file based on [.env.example](https://github.com/rokussadee/lac/blob/development/lac_laravel/.env.example)
+
+Run MySQL test database (for example, using MAMP), then;
 
 ```bash
   npm install
